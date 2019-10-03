@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_oct/social_feeds.dart';
+import 'package:flutter_oct/social_feeds.dart';
 import 'calculator.dart';
+import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fruitapp.dart';
 import 'minimal_music.dart';
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
 //      home: Calculator(),
-//      home: FindFlight(),
 //      home: FruitApp(),
 //      home: MinimalMusicApp(),
 //      home: SocialFeedsPage(),
-      home: Interior(),
+//      home: FindFlight(),
+      home: FahsionApp(),
     );
   }
 }
