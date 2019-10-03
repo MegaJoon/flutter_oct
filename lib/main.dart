@@ -4,6 +4,7 @@ import 'calculator.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fruitapp.dart';
+import 'lightapp.dart';
 import 'minimal_music.dart';
 
 void main() => runApp(MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
 //      home: MinimalMusicApp(),
 //      home: SocialFeedsPage(),
 //      home: FindFlight(),
-      home: FahsionApp(),
+//      home: FahsionApp(),
+      home: LightApp(),
     );
   }
 }
