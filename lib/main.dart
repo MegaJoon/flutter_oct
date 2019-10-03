@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/social_feeds.dart';
-
+//import 'package:flutter_oct/social_feeds.dart';
 import 'calculator.dart';
 import 'find_flight.dart';
 import 'fruitapp.dart';
@@ -17,7 +16,8 @@ class MyApp extends StatelessWidget {
 //      home: FindFlight(),
 //      home: FruitApp(),
 //      home: MinimalMusicApp(),
-      home: SocialFeedsPage(),
+//      home: SocialFeedsPage(),
+      home: Interior(),
     );
   }
 }
