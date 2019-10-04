@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_oct/social_feeds.dart';
+import 'package:flutter_oct/social_share.dart';
 import 'calculator.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
 //      home: SocialFeedsPage(),
 //      home: FindFlight(),
 //      home: FahsionApp(),
-      home: LightApp(),
+//      home: LightApp(),
+      home: SocialShare(),
     );
   }
 }
