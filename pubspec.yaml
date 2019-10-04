@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   scrollable_bottom_sheet: ^0.2.1
   font_awesome_flutter: ^8.5.0
+  vertical_tabs: ^0.1.4
 
 dev_dependencies:
   flutter_test:

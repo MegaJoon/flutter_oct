@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
 import 'package:flutter_oct/user_profile.dart';
 import 'calculator.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
+import 'fitness_app.dart';
 import 'fruitapp.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
 //      home: FahsionApp(),
 //      home: LightApp(),
 //      home: SocialShare(),
-      home: UserProfile(),
+//      home: UserProfile(),
+//      home: FitnessApp(),
+      home: SignUp(),
     );
   }
 }
