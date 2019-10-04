@@ -1,4 +1,6 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // https://dribbble.com/shots/7309710-Daily-UI-010-Social-Share
 
@@ -10,11 +12,12 @@ class SocialShare extends StatefulWidget {
 class _SocialShareState extends State<SocialShare> {
   String _image =
       "https://cdn.pixabay.com/photo/2014/03/14/20/13/dog-287420_960_720.jpg";
+  Color _color = Color.fromRGBO(75, 163, 17, 1);
+  double secondpageHeight = 0.0;
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: Container(
         child: Stack(
@@ -40,11 +43,14 @@ class _SocialShareState extends State<SocialShare> {
                   child: Container(
                     height: 40,
                     color: Colors.grey[500],
-                    child: Row(
-                      children: <Widget>[
-                        Icon(Icons.arrow_back_ios,
-                            size: 20.0, color: Colors.white)
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 14.0),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(Icons.arrow_back_ios,
+                              size: 20.0, color: Colors.white)
+                        ],
+                      ),
                     ),
                   )),
             ),
@@ -81,14 +87,161 @@ class _SocialShareState extends State<SocialShare> {
               ),
             ),
             Positioned(
-              top: screenHeight * 0.60 + 10,
-              right: 32,
-              child: FloatingActionButton(
-                  onPressed: () {},
-                  backgroundColor: Color.fromRGBO(75, 163, 17, 1),
-                  mini: true,
-                  child: Icon(Icons.save_alt, size: 24.0, color: Colors.white)),
-            )
+                top: screenHeight * 0.60 + 10,
+                right: 32,
+                child: FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        secondpageHeight = screenHeight;
+                      });
+                    },
+                    backgroundColor: _color,
+                    mini: true,
+                    child:
+                        Icon(Icons.save_alt, size: 24.0, color: Colors.white))),
+            Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                // TODO
+                child: AnimatedContainer(
+                  duration: new Duration(milliseconds: 500),
+                  height: secondpageHeight,
+                  curve: Curves.fastOutSlowIn,
+                  color: _color.withOpacity(0.5),
+                  child: Column(
+                    children: <Widget>[
+                      SafeArea(
+                        top: true,
+                        left: true,
+                        right: true,
+                        child: Container(
+                          height: 40,
+                          child: Row(
+                            children: <Widget>[
+                              IconButton(
+                                  icon: Icon(Icons.arrow_back_ios),
+                                  iconSize: 20.0,
+                                  onPressed: () {
+                                    setState(() {
+                                      secondpageHeight = 0.0;
+                                    });
+                                  })
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.only(left: 48.0, right: 48.0, top: 24.0),
+                        height: 52,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24.0),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Icon(
+                                  FontAwesomeIcons.facebookF,
+                                  color: _color,
+                                  size: 32.0,
+                                )),
+                            Expanded(
+                                flex: 8,
+                                child: Text("Share on Facebook",
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold))),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.only(left: 48.0, right: 48.0, top: 16.0),
+                        height: 52,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24.0),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Icon(
+                                  FontAwesomeIcons.twitter,
+                                  color: _color,
+                                  size: 32.0,
+                                )),
+                            Expanded(
+                                flex: 8,
+                                child: Text("Share on Twitter",
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold))),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.only(left: 48.0, right: 48.0, top: 16.0),
+                        height: 52,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24.0),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Icon(
+                                  FontAwesomeIcons.mailBulk,
+                                  color: _color,
+                                  size: 32.0,
+                                )),
+                            Expanded(
+                                flex: 8,
+                                child: Text("Send on Email",
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold))),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.only(left: 48.0, right: 48.0, top: 16.0),
+                        height: 52,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24.0),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Icon(
+                                  FontAwesomeIcons.link,
+                                  color: _color,
+                                  size: 32.0,
+                                )),
+                            Expanded(
+                                flex: 8,
+                                child: Text("Copy Link",
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold))),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ))
           ],
         ),
       ),
