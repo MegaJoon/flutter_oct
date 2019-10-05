@@ -4,6 +4,7 @@ import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
 import 'package:flutter_oct/user_profile.dart';
 import 'calculator.dart';
+import 'cookingapp.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fitness_app.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
 //      home: FitnessApp(),
 //      home: SignUp(),
 //      home: Instagram(),
-      home: MyPage(),
+//      home: MyPage(),
+      home: CookingApp(),
     );
   }
 }
