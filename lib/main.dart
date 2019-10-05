@@ -8,6 +8,7 @@ import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fitness_app.dart';
 import 'fruitapp.dart';
+import 'instagram.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
 //      home: SocialShare(),
 //      home: UserProfile(),
 //      home: FitnessApp(),
-      home: SignUp(),
+//      home: SignUp(),
+      home: Instagram(),
     );
   }
 }
