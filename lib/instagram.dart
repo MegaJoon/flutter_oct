@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'content.dart';
+
 // https://dribbble.com/shots/7332739-Instagram-Redesign/attachments/247998?mode=media
 
 class Instagram extends StatefulWidget {
@@ -15,16 +17,6 @@ class _InstagramState extends State<Instagram> {
   Color _color4 = Color.fromRGBO(57, 176, 103, 1);
   String _profileImage =
       "https://cdn.pixabay.com/photo/2019/10/02/18/00/selfie-4521579__340.jpg";
-  String _profileImage2 =
-      "https://cdn.pixabay.com/photo/2019/10/01/14/28/nova-scotia-duck-tolling-retriever-4518442__340.jpg";
-  String _profileImage3 =
-      "https://cdn.pixabay.com/photo/2019/09/26/02/21/monarch-4504909__340.jpg";
-  String _profileImage4 =
-      "https://cdn.pixabay.com/photo/2019/10/03/17/56/dahlia-4524017__340.jpg";
-  String _profileImage5 =
-      "https://cdn.pixabay.com/photo/2019/09/28/03/54/sunflower-4509760__340.jpg";
-  String _profileImage6 =
-      "https://cdn.pixabay.com/photo/2019/10/02/13/16/blue-throated-bee-eater-4520945__340.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +131,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage2),
+                                      image: NetworkImage(content[0].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
@@ -167,7 +159,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage3),
+                                      image: NetworkImage(content[1].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
@@ -195,7 +187,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage4),
+                                      image: NetworkImage(content[2].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
@@ -223,7 +215,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage),
+                                      image: NetworkImage(content[3].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
@@ -251,7 +243,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage5),
+                                      image: NetworkImage(content[4].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
@@ -279,7 +271,7 @@ class _InstagramState extends State<Instagram> {
                                   border: Border.all(
                                       color: Colors.black, width: 3.0),
                                   image: DecorationImage(
-                                      image: NetworkImage(_profileImage5),
+                                      image: NetworkImage(content[5].profileImage),
                                       fit: BoxFit.fill)),
                             ),
                           ),
