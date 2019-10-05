@@ -13,12 +13,18 @@ class _InstagramState extends State<Instagram> {
   Color _color2 = Color.fromRGBO(151, 30, 125, 1);
   Color _color3 = Color.fromRGBO(146, 219, 113, 1);
   Color _color4 = Color.fromRGBO(57, 176, 103, 1);
-  String _profileImage = "https://cdn.pixabay.com/photo/2019/10/02/18/00/selfie-4521579__340.jpg";
-  String _profileImage2 = "https://cdn.pixabay.com/photo/2019/10/01/14/28/nova-scotia-duck-tolling-retriever-4518442__340.jpg";
-  String _profileImage3 = "https://cdn.pixabay.com/photo/2019/09/26/02/21/monarch-4504909__340.jpg";
-  String _profileImage4 = "https://cdn.pixabay.com/photo/2019/10/03/17/56/dahlia-4524017__340.jpg";
-  String _profileImage5 = "https://cdn.pixabay.com/photo/2019/09/28/03/54/sunflower-4509760__340.jpg";
-  String _profileImage6 = "https://cdn.pixabay.com/photo/2019/10/02/13/16/blue-throated-bee-eater-4520945__340.jpg";
+  String _profileImage =
+      "https://cdn.pixabay.com/photo/2019/10/02/18/00/selfie-4521579__340.jpg";
+  String _profileImage2 =
+      "https://cdn.pixabay.com/photo/2019/10/01/14/28/nova-scotia-duck-tolling-retriever-4518442__340.jpg";
+  String _profileImage3 =
+      "https://cdn.pixabay.com/photo/2019/09/26/02/21/monarch-4504909__340.jpg";
+  String _profileImage4 =
+      "https://cdn.pixabay.com/photo/2019/10/03/17/56/dahlia-4524017__340.jpg";
+  String _profileImage5 =
+      "https://cdn.pixabay.com/photo/2019/09/28/03/54/sunflower-4509760__340.jpg";
+  String _profileImage6 =
+      "https://cdn.pixabay.com/photo/2019/10/02/13/16/blue-throated-bee-eater-4520945__340.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +75,7 @@ class _InstagramState extends State<Instagram> {
                 shrinkWrap: true,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(right: 24.0),
+                      margin: EdgeInsets.only(right: 24.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -112,7 +118,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -140,7 +146,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -168,7 +174,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -196,7 +202,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -224,7 +230,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -252,7 +258,7 @@ class _InstagramState extends State<Instagram> {
                         ],
                       )),
                   Container(
-                    margin: EdgeInsets.only(right: 8.0),
+                      margin: EdgeInsets.only(right: 8.0),
                       height: 56,
                       width: 56,
                       child: Stack(
@@ -281,6 +287,16 @@ class _InstagramState extends State<Instagram> {
                       )),
                 ],
               ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: double.maxFinite,
+              color: Colors.amber,
+              child: ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                return Container(
+                    height: 300, width: double.maxFinite, child: Placeholder());
+              }),
             )
           ],
         ),
