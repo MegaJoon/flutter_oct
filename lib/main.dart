@@ -11,6 +11,7 @@ import 'fruitapp.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
+import 'mypage.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
 //      home: UserProfile(),
 //      home: FitnessApp(),
 //      home: SignUp(),
-      home: Instagram(),
+//      home: Instagram(),
+      home: MyPage(),
     );
   }
 }
