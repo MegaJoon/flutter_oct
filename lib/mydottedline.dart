@@ -22,7 +22,7 @@ class MyDottedline extends StatelessWidget {
                 SizedBox(
                   height: lineHeight,
                   width: lineWidth,
-                  child: DecoratedBox(decoration: BoxDecoration(color: Colors.white)),
+                  child: DecoratedBox(decoration: BoxDecoration(color: Colors.grey[200])),
                 ),
               ],
             );
