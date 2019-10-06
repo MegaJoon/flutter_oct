@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_oct/receiptapp.dart';
+import 'package:flutter_oct/second_receipt.dart';
 import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
 //      home: MyPage(),
 //      home: CookingApp(),
       home: ReceiptApp(),
+//      home: SecondReceipt(),
     );
   }
 }

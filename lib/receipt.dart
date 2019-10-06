@@ -14,7 +14,7 @@ List<Receipt> receipt = [
   Receipt(
       title: "Birmingham Meeting",
       image: "https://cdn.pixabay.com/photo/2019/10/02/14/09/jam-4521023__340.jpg",
-      price: "£35.50",
+      price: "35.50",
       tag: "Travel",
       tag2: "Food",
       content: "veniam, quls nostrud exercitation\nlaboris nisl ut allquip ex ea",
@@ -22,7 +22,7 @@ List<Receipt> receipt = [
   Receipt(
       title: "Interview with Jackson",
       image: "https://cdn.pixabay.com/photo/2019/10/02/16/56/landscape-4521413__340.jpg",
-      price: "£35.50",
+      price: "35.50",
       tag: "Travel",
       tag2: "Food",
       content: "veniam, quls nostrud exercitation\nlaboris nisl ut allquip ex ea",
