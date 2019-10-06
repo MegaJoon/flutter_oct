@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/setting_ios.dart';
+import 'package:flutter_oct/receiptapp.dart';
 import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
 //      home: Instagram(),
 //      home: MyPage(),
 //      home: CookingApp(),
-      home: SettingIos(),
+      home: ReceiptApp(),
     );
   }
 }
