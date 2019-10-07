@@ -12,6 +12,9 @@ class _ReceiptApp3State extends State<ReceiptApp3>
   String _image =
       "https://cdn.pixabay.com/photo/2019/09/30/14/29/books-4515917__340.jpg";
   TabController _tabController;
+  Color _color = Color.fromRGBO(255, 185, 104, 1);
+  double boxHeight = 0.0;
+  bool isSelected = false;
 
   @override
   void initState() {
@@ -20,10 +23,14 @@ class _ReceiptApp3State extends State<ReceiptApp3>
     _tabController = TabController(length: 4, vsync: this);
   }
 
+  void onChanged(){
+    isSelected = !isSelected;
+    isSelected? boxHeight = 168.0: boxHeight = 0.0;
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -134,13 +141,202 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                       topLeft: Radius.circular(24.0),
                       topRight: Radius.circular(24.0))),
               child: TabBarView(controller: _tabController, children: [
-                Placeholder(),
-                Placeholder(),
-                Placeholder(),
-                Placeholder(),
+                // Recent
+                Container(
+                  margin: EdgeInsets.only(
+                      left: 16.0, right: 16.0, top: 24.0, bottom: 24.0),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          height: 40,
+//                        color: Colors.black,
+                          child: Row(
+                            children: <Widget>[
+                              Flexible(
+                                flex: 1,
+                                child: IconButton(
+                                  icon: Icon(isSelected? Icons.keyboard_arrow_down:Icons.arrow_forward_ios,
+                                      size: 20.0, color: _color),
+                                  onPressed: () {
+                                    setState(() {
+                                      // on clicked -> open
+                                      onChanged();
+                                    });
+                                  },
+                                ),
+                              ),
+                              Flexible(
+                                  flex: 2,
+                                  child: Icon(Icons.folder_open,
+                                      size: 24.0, color: _color)),
+                              Flexible(
+                                  flex: 7,
+                                  child: Text(
+                                    "How To Maintain Your Mental Health",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600),
+                                  )),
+                            ],
+                          ),
+                        ),
+                        Divider(),
+                        Container(
+                          height: boxHeight,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                height: 40,
+                                child: Row(
+                                  children: <Widget>[
+                                    Flexible(flex: 1, child: Container()),
+                                    Flexible(
+                                        flex: 2,
+                                        child: Icon(Icons.folder,
+                                            size: 24.0, color: _color)),
+                                    Flexible(
+                                        flex: 7,
+                                        child: Text(
+                                          "From Wetlands To Canals And Damssknvcadlkcnlkasdncaslk",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w600),
+                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                              Container(
+                                height: 40,
+                                child: Row(
+                                  children: <Widget>[
+                                    Flexible(flex: 1, child: Container()),
+                                    Flexible(
+                                        flex: 2,
+                                        child: Icon(Icons.folder,
+                                            size: 24.0, color: _color)),
+                                    Flexible(
+                                        flex: 7,
+                                        child: Text(
+                                          "Selecting The Right Hotel",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w600),
+                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                              Container(
+                                height: 40,
+                                child: Row(
+                                  children: <Widget>[
+                                    Flexible(flex: 1, child: Container()),
+                                    Flexible(
+                                        flex: 2,
+                                        child: Icon(Icons.folder,
+                                            size: 24.0, color: _color)),
+                                    Flexible(
+                                        flex: 7,
+                                        child: Text(
+                                          "It S Hurricane Season But We Are Visitin",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w600),
+                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+//                        color: Colors.black,
+                          child: Row(
+                            children: <Widget>[
+                              Flexible(
+                                flex: 1,
+                                child: IconButton(
+                                  icon: Icon(Icons.arrow_forward_ios,
+                                      size: 20.0, color: _color),
+                                  onPressed: () {
+                                  },
+                                ),
+                              ),
+                              Flexible(
+                                  flex: 2,
+                                  child: Icon(Icons.folder_open,
+                                      size: 24.0, color: _color)),
+                              Flexible(
+                                  flex: 7,
+                                  child: Text(
+                                    "Getting Cheap Airfare For Last Minute",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600),
+                                    maxLines: 1, overflow: TextOverflow.ellipsis,
+                                  )),
+                            ],
+                          ),
+                        ),
+                        Divider(),
+                        Container(
+                          height: 40,
+//                        color: Colors.black,
+                          child: Row(
+                            children: <Widget>[
+                              Flexible(
+                                flex: 1,
+                                child: IconButton(
+                                  icon: Icon(Icons.arrow_forward_ios,
+                                      size: 20.0, color: _color),
+                                  onPressed: () {
+                                  },
+                                ),
+                              ),
+                              Flexible(
+                                  flex: 2,
+                                  child: Icon(Icons.folder_open,
+                                      size: 24.0, color: _color)),
+                              Flexible(
+                                  flex: 7,
+                                  child: Text(
+                                    "Become A Travel Pro In Onew Easy Lesson",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600),
+                                    maxLines: 1, overflow: TextOverflow.ellipsis,
+                                  )),
+                            ],
+                          ),
+                        ),
+                        Divider(),
+
+                      ],
+                    ),
+                  ),
+                ),
+                Placeholder(color: Colors.red),
+                Placeholder(color: Colors.green),
+                Placeholder(color: Colors.blue),
               ]),
             ),
-          )
+          ),
+
+
         ],
       ),
     );
