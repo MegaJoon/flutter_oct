@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oct/receipt3.dart';
 import 'package:flutter_oct/receiptapp.dart';
 import 'package:flutter_oct/second_receipt.dart';
 import 'package:flutter_oct/sign_up.dart';
@@ -37,8 +38,8 @@ class MyApp extends StatelessWidget {
 //      home: Instagram(),
 //      home: MyPage(),
 //      home: CookingApp(),
-      home: ReceiptApp(),
-//      home: SecondReceipt(),
+//      home: ReceiptApp(),
+      home: ReceiptApp3(),
     );
   }
 }
