@@ -12,6 +12,7 @@ import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fitness_app.dart';
 import 'fruitapp.dart';
+import 'ice_cream.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
 //      home: MyPage(),
 //      home: CookingApp(),
 //      home: ReceiptApp(),
-      home: ReceiptApp3(),
+//      home: ReceiptApp3(),
+      home: IceCream(),
     );
   }
 }
