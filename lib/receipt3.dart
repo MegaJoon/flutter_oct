@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 // https://dribbble.com/shots/7355190-Receipt-App/attachments/254360?mode=media
 
@@ -23,9 +24,9 @@ class _ReceiptApp3State extends State<ReceiptApp3>
     _tabController = TabController(length: 4, vsync: this);
   }
 
-  void onChanged(){
+  void onChanged() {
     isSelected = !isSelected;
-    isSelected? boxHeight = 168.0: boxHeight = 0.0;
+    isSelected ? boxHeight = 168.0 : boxHeight = 0.0;
   }
 
   @override
@@ -130,7 +131,7 @@ class _ReceiptApp3State extends State<ReceiptApp3>
               )),
           // bottom
           Positioned(
-            bottom: 0,
+            top: screenHeight * 0.45,
             left: 0,
             right: 0,
             child: Container(
@@ -157,8 +158,12 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                               Flexible(
                                 flex: 1,
                                 child: IconButton(
-                                  icon: Icon(isSelected? Icons.keyboard_arrow_down:Icons.arrow_forward_ios,
-                                      size: 20.0, color: _color),
+                                  icon: Icon(
+                                      isSelected
+                                          ? Icons.keyboard_arrow_down
+                                          : Icons.arrow_forward_ios,
+                                      size: 20.0,
+                                      color: _color),
                                   onPressed: () {
                                     setState(() {
                                       // on clicked -> open
@@ -205,7 +210,8 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                               color: Colors.black,
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.w600),
-                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         )),
                                   ],
                                 ),
@@ -228,7 +234,8 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                               color: Colors.black,
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.w600),
-                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         )),
                                   ],
                                 ),
@@ -251,7 +258,8 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                               color: Colors.black,
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.w600),
-                                          maxLines: 1, overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         )),
                                   ],
                                 ),
@@ -270,8 +278,7 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                 child: IconButton(
                                   icon: Icon(Icons.arrow_forward_ios,
                                       size: 20.0, color: _color),
-                                  onPressed: () {
-                                  },
+                                  onPressed: () {},
                                 ),
                               ),
                               Flexible(
@@ -286,7 +293,8 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                         color: Colors.black,
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600),
-                                    maxLines: 1, overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   )),
                             ],
                           ),
@@ -302,8 +310,7 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                 child: IconButton(
                                   icon: Icon(Icons.arrow_forward_ios,
                                       size: 20.0, color: _color),
-                                  onPressed: () {
-                                  },
+                                  onPressed: () {},
                                 ),
                               ),
                               Flexible(
@@ -318,13 +325,13 @@ class _ReceiptApp3State extends State<ReceiptApp3>
                                         color: Colors.black,
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600),
-                                    maxLines: 1, overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   )),
                             ],
                           ),
                         ),
                         Divider(),
-
                       ],
                     ),
                   ),
@@ -336,9 +343,22 @@ class _ReceiptApp3State extends State<ReceiptApp3>
             ),
           ),
 
-
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            top: screenHeight * 0.8,
+            child: Container(
+              height: screenHeight * 0.2,
+              color: Colors.white.withOpacity(0.5),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              ),
+            ),
+          )
         ],
       ),
     );
+//              ),
   }
 }
