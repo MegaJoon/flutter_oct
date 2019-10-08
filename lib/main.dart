@@ -6,6 +6,7 @@ import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
 import 'package:flutter_oct/user_profile.dart';
+import 'boardpass.dart';
 import 'calculator.dart';
 import 'cookingapp.dart';
 import 'fashionapp.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
 //      home: ReceiptApp(),
 //      home: ReceiptApp3(),
 //      home: IceCream(),
-      home: MusicApp(),
+//      home: MusicApp(),
+      home: BoardingPass(),
     );
   }
 }
