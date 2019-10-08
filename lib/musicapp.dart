@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 
+// https://dribbble.com/shots/7346324-simple-music-app/attachments/252403?mode=media
+
 class MusicApp extends StatefulWidget {
   @override
   _MusicAppState createState() => _MusicAppState();
 }
 
 class _MusicAppState extends State<MusicApp> {
+  Color _color = Color.fromRGBO(225, 205, 205, 1);
+  Color _color2 = Color.fromRGBO(219, 149, 148, 1);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [_color, _color2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+
+        ),
+      ),
       // bottomnavigation
       bottomNavigationBar: BottomAppBar(
+        color: _color2,
         child: Container(
           height: 64,
           decoration: BoxDecoration(
