@@ -16,6 +16,7 @@ import 'ice_cream.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
+import 'musicapp.dart';
 import 'mypage.dart';
 
 void main() => runApp(MyApp());
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
 //      home: CookingApp(),
 //      home: ReceiptApp(),
 //      home: ReceiptApp3(),
-      home: IceCream(),
+//      home: IceCream(),
+      home: MusicApp(),
     );
   }
 }
