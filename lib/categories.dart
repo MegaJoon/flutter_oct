@@ -18,6 +18,8 @@ class _CategoriesState extends State<Categories> {
 
   void onSelected(index) {
     currentIndex = index;
+    sport[currentIndex].isSelected = !sport[currentIndex].isSelected;
+    print("currentIndex = $currentIndex");
   }
 
   @override
@@ -65,7 +67,7 @@ class _CategoriesState extends State<Categories> {
 //              color: _backgroundColor,
               child: GridView.builder(
                 padding: EdgeInsets.only(top: 16.0),
-                itemCount: 9,
+                itemCount: sport.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3, crossAxisSpacing: 8.0, mainAxisSpacing: 8.0),
                 itemBuilder: (BuildContext context, int index) {
@@ -80,8 +82,8 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(
-                              color: currentIndex == index ? _color : _iconColor, width: 2.0),
-                          color: currentIndex == index ? _color : _backgroundColor),
+                              color: (sport[index].isSelected) ? _color : _iconColor, width: 2.0),
+                          color: (sport[index].isSelected) ? _color : _backgroundColor),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -152,45 +154,55 @@ class _CategoriesState extends State<Categories> {
 class Sport {
   IconData ballIcons;
   String name;
+  bool isSelected;
 
-  Sport({this.ballIcons, this.name});
+  Sport({this.ballIcons, this.name, this.isSelected});
 }
 
 List<Sport> sport = [
   Sport(
     ballIcons: FontAwesomeIcons.basketballBall,
     name: "Basketball",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.baseballBall,
     name: "Baseball",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.footballBall,
     name: "Soccer",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.tableTennis,
     name: "Tennis",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.footballBall,
     name: "Football",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.hockeyPuck,
     name: "Hockey",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.volleyballBall,
     name: "Volleyball",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.hands,
     name: "Boxing",
+    isSelected: false,
   ),
   Sport(
     ballIcons: FontAwesomeIcons.golfBall,
     name: "Golf",
+    isSelected: false,
   ),
 ];
