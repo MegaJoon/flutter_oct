@@ -18,6 +18,7 @@ import 'ice_cream.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
 import 'minimal_music.dart';
+import 'music_festival.dart';
 import 'musicapp.dart';
 import 'mypage.dart';
 
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
 //      home: IceCream(),
 //      home: MusicApp(),
 //      home: BoardingPass(),
-      home: Categories(),
+//      home: Categories(),
+      home: MusicFestival(),
     );
   }
 }
