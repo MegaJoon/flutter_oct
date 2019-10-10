@@ -232,7 +232,9 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                   Text(
                                     "Reject",
                                     style: TextStyle(
-                                        color: _closeColor, fontSize: 16.0, fontWeight: FontWeight.bold),
+                                        color: _closeColor,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -279,7 +281,8 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                                 fit: BoxFit.fill)),
                                       ),
                                       Positioned(
-                                        top: 0, right: -5,
+                                        top: 0,
+                                        right: -5,
                                         child: Container(
                                           margin: EdgeInsets.only(right: 8.0),
                                           height: 24.0,
@@ -294,7 +297,8 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                         ),
                                       ),
                                       Positioned(
-                                        bottom: 0, right: -5,
+                                        bottom: 0,
+                                        right: -5,
                                         child: Container(
                                           margin: EdgeInsets.only(right: 8.0),
                                           height: 24.0,
@@ -323,7 +327,11 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          Icon(Icons.lock, size: 16.0, color: Colors.grey[500],)
+                                          Icon(
+                                            Icons.lock,
+                                            size: 16.0,
+                                            color: Colors.grey[500],
+                                          )
                                         ],
                                       ),
                                       Text(
@@ -408,7 +416,9 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                   Text(
                                     "Reject",
                                     style: TextStyle(
-                                        color: _closeColor, fontSize: 16.0, fontWeight: FontWeight.bold),
+                                        color: _closeColor,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -455,7 +465,8 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                                 fit: BoxFit.fill)),
                                       ),
                                       Positioned(
-                                        top: 0, right: -5,
+                                        top: 0,
+                                        right: -5,
                                         child: Container(
                                           margin: EdgeInsets.only(right: 8.0),
                                           height: 24.0,
@@ -470,7 +481,8 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                         ),
                                       ),
                                       Positioned(
-                                        bottom: 0, right: -5,
+                                        bottom: 0,
+                                        right: -5,
                                         child: Container(
                                           margin: EdgeInsets.only(right: 8.0),
                                           height: 24.0,
@@ -499,7 +511,11 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          Icon(Icons.lock, size: 16.0, color: Colors.grey[500],)
+                                          Icon(
+                                            Icons.lock,
+                                            size: 16.0,
+                                            color: Colors.grey[500],
+                                          )
                                         ],
                                       ),
                                       Text(
@@ -584,7 +600,9 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
                                   Text(
                                     "Reject",
                                     style: TextStyle(
-                                        color: _closeColor, fontSize: 16.0, fontWeight: FontWeight.bold),
+                                        color: _closeColor,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -600,7 +618,203 @@ class _RequestsState extends State<Requests> with TickerProviderStateMixin {
           ),
 
           // previous requests
-          Placeholder(),
+          Column(
+            children: <Widget>[
+              SizedBox(height: 24.0,),
+              Container(
+                margin: EdgeInsets.only(
+                  bottom: 16.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                height: 80.0,
+                width: double.infinity,
+//                color: Colors.amber,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: "You've ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "Accepted ".toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 16.0, color: Colors.teal, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "(Abral Shar3 9), ",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "invitation.",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                      ]),
+                    ),
+                    Text(
+                      "2 hours age",
+                      style: TextStyle(
+                          color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),
+                    ),
+                    Divider(),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  bottom: 16.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                height: 80.0,
+                width: double.infinity,
+//                color: Colors.amber,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: "You've ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "Rejected ".toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 16.0, color: _closeColor, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "(Phet Putrie), ",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "request to join your team ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "(Abral Shar4 9).",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                      ]),
+                    ),
+                    Text(
+                      "13 May 2018",
+                      style: TextStyle(
+                          color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),
+                    ),
+                    Divider(),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  bottom: 16.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                height: 80.0,
+                width: double.infinity,
+//                color: Colors.amber,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: "You've ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "Accepted ".toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 16.0, color: Colors.teal, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "(Abral Shar3 9), ",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "invitation.",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                      ]),
+                    ),
+                    Text(
+                      "2 hours age",
+                      style: TextStyle(
+                          color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),
+                    ),
+                    Divider(),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  bottom: 16.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                height: 80.0,
+                width: double.infinity,
+//                color: Colors.amber,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                            text: "You've ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "Rejected ".toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 16.0, color: _closeColor, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "(Phet Putrie), ",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: "request to join your team ",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.w600)),
+                        TextSpan(
+                            text: "(Abral Shar4 9).",
+                            style: TextStyle(
+                                fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold)),
+                      ]),
+                    ),
+                    Text(
+                      "13 May 2018",
+                      style: TextStyle(
+                          color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),
+                    ),
+                    Divider(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
         //
       ),
