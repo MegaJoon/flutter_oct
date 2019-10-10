@@ -27,6 +27,7 @@ dependencies:
   font_awesome_flutter: ^8.5.0
   vertical_tabs: ^0.1.4
   carousel_slider: ^1.3.1
+  badges: ^1.1.0
 
 dev_dependencies:
   flutter_test:
