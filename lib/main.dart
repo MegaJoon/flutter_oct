@@ -22,6 +22,7 @@ import 'minimal_music.dart';
 import 'music_festival.dart';
 import 'musicapp.dart';
 import 'mypage.dart';
+import 'nba.dart';
 
 void main() => runApp(MyApp());
 
@@ -51,7 +52,8 @@ class MyApp extends StatelessWidget {
 //      home: BoardingPass(),
 //      home: Categories(),
 //      home: MusicFestival(),
-      home: Requests(),
+//      home: Requests(),
+      home: NBA(),
     );
   }
 }
