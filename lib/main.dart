@@ -3,6 +3,7 @@ import 'package:flutter_oct/receipt3.dart';
 import 'package:flutter_oct/receiptapp.dart';
 import 'package:flutter_oct/requests.dart';
 import 'package:flutter_oct/second_receipt.dart';
+import 'package:flutter_oct/service_appointment.dart';
 import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
 //      home: MusicFestival(),
 //      home: Requests(),
 //      home: CheckOut(),
-      home: GiftCard(),
+//      home: GiftCard(),
+      home: ServiceAppointment(),
     );
   }
 }
