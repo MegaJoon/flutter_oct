@@ -10,11 +10,13 @@ import 'package:flutter_oct/user_profile.dart';
 import 'boardpass.dart';
 import 'calculator.dart';
 import 'categories.dart';
+import 'checkout.dart';
 import 'cookingapp.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
 import 'fitness_app.dart';
 import 'fruitapp.dart';
+import 'giftcard.dart';
 import 'ice_cream.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
@@ -22,7 +24,6 @@ import 'minimal_music.dart';
 import 'music_festival.dart';
 import 'musicapp.dart';
 import 'mypage.dart';
-import 'nba.dart';
 
 void main() => runApp(MyApp());
 
@@ -52,7 +53,9 @@ class MyApp extends StatelessWidget {
 //      home: BoardingPass(),
 //      home: Categories(),
 //      home: MusicFestival(),
-      home: Requests(),
+//      home: Requests(),
+//      home: CheckOut(),
+      home: GiftCard(),
     );
   }
 }
