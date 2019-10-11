@@ -17,7 +17,7 @@ class _NBAState extends State<NBA> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          // top
+          // top container
           Positioned(
             top: 0,
             left: 0,
@@ -27,6 +27,28 @@ class _NBAState extends State<NBA> {
               child: Container(
                 height: screenHeight * 0.25,
                 color: _topColor,
+              ),
+            ),
+          ),
+
+          // appbar
+          Positioned(
+            top: 8,
+            left: 24,
+            right: 24,
+            child: SafeArea(
+              top: true, left: true, right: true,
+              child: Container(
+                height: 40,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text("Games", style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),),
+                    Text("Calendar", style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 20.0, fontWeight: FontWeight.w600),),
+                    Icon(Icons.account_circle, color: Colors.white, size: 24.0,)
+                  ],
+                ),
               ),
             ),
           )
