@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-class MyDottedline extends StatelessWidget {
+class Dottedline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        final boxHeight = constraints.constrainHeight();
-        final lineHeight = 12.0;
-        final lineWidth = 3.0;
-        final lineCount = (boxHeight / (lineHeight * 2.0)).floor();
+        final boxWeight = constraints.constrainWidth();
+        final lineHeight = 2.0;
+        final lineWidth = 2.0;
+        final lineCount = (boxWeight / (lineHeight *2)).floor();
+
         return Flex(
-          direction: Axis.vertical,
+          direction: Axis.horizontal,
           children: List.generate(lineCount, (_){
-            return Column(
+            return Row(
               children: <Widget>[
                 SizedBox(
                   height: lineHeight,
                   width: lineWidth,
-                  child: DecoratedBox(decoration: BoxDecoration(color: Colors.amber[200])),
+                  child: DecoratedBox(decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white)),
                 ),
                 SizedBox(
                   height: lineHeight,
                   width: lineWidth,
-                  child: DecoratedBox(decoration: BoxDecoration(color: Colors.grey[200])),
                 ),
               ],
             );
