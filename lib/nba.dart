@@ -22,171 +22,177 @@ class _NBAState extends State<NBA> {
             top: 90,
             left: 0,
             right: 0,
-            child: Container(
-              height: 100,
-              color: Colors.transparent,
-              child: Container(
-                height: 100,
-                width: double.infinity,
+            bottom: 0,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 100,
+                  color: Colors.transparent,
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
 //                      color: Colors.teal,
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(right: 24.0),
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Tue",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                    child: ListView(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 24.0),
+                          height: 50,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
-                          Text(
-                            "8",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Tue",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "8",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Oct",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Oct",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 24.0),
+                          height: 50,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(16.0),
+                              border: Border.all(color: _topColor, width: 2.5)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Wed",
+                                style: TextStyle(
+                                    color: _topColor, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "9",
+                                style: TextStyle(
+                                    color: _topColor, fontSize: 40.0, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Oct",
+                                style: TextStyle(
+                                    color: _topColor, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 24.0),
+                          height: 50,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Thu",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "10",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Oct",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 24.0),
+                          height: 50,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Fri",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "11",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Oct",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 24.0),
+                          height: 50,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Sat",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "12",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Oct",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      margin: EdgeInsets.only(right: 24.0),
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(16.0),
-                          border: Border.all(color: _topColor, width: 2.5)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Wed",
-                            style: TextStyle(
-                                color: _topColor, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                          Text(
-                            "9",
-                            style: TextStyle(
-                                color: _topColor, fontSize: 40.0, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Oct",
-                            style: TextStyle(
-                                color: _topColor, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 24.0),
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Thu",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                          Text(
-                            "10",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Oct",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 24.0),
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Fri",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                          Text(
-                            "11",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Oct",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 24.0),
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Sat",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                          Text(
-                            "12",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 40.0, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Oct",
-                            style: TextStyle(
-                                color: Colors.grey, fontSize: 20.0, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+                Placeholder(),
+              ],
             ),
           ),
           // top container
@@ -242,10 +248,20 @@ class _NBAState extends State<NBA> {
               ),
             ),
           ),
-
-          
         ],
       ),
+
+      bottomNavigationBar: BottomAppBar(
+//        color: Colors.transparent,
+        child: ClipPath(
+          clipper: myClipper2(),
+          child: Container(
+            height: screenHeight * 0.25,
+            color: _bottomColor,
+          ),
+        ),
+      ),
+
     );
   }
 }
@@ -262,6 +278,26 @@ class myClipper extends CustomClipper<Path> {
     path.quadraticBezierTo(size.width * 0.90, size.height * 0.55, size.width, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
+
+// bottom clipper
+class myClipper2 extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = new Path();
+    path.lineTo(0, 0);
+    path.quadraticBezierTo(
+        size.width * 0.05, size.height * 0.40, size.width * 0.20, size.height * 0.50);
+    path.lineTo(size.width * 0.70, size.height * 0.50);
+    path.quadraticBezierTo(size.width * 0.90, size.height * 0.55, size.width, size.height);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
     path.close();
     return path;
   }
