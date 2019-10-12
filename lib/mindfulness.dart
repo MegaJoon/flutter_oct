@@ -86,10 +86,41 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
           ),
 
           Container(
-            height: 579.0,
+            height: 555.0,
             child: TabBarView(controller: _tabController, children: [
               Placeholder(),
-              Placeholder(),
+              // second page
+              Container(
+                margin: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+                height: 555.0,
+                child: Column(
+                  children: <Widget>[
+                    Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
+                    SizedBox(height: 16.0,),
+                    Flexible(flex: 3, child: Row(
+                      children: <Widget>[
+                        Flexible(flex: 1, child: Column(
+                          children: <Widget>[
+                            Flexible(flex: 2, child: Placeholder(color: Colors.teal,),),
+                            SizedBox(height: 16.0,),
+                            Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
+                            SizedBox(height: 16.0,),
+                          ],
+                        ),),
+                        SizedBox(width: 16.0,),
+                        Flexible(flex: 1, child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 16.0,),
+                            Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
+                            SizedBox(height: 16.0,),
+                            Flexible(flex: 2, child: Placeholder(color: Colors.teal,),),
+                          ],
+                        ),),
+                      ],
+                    ),),
+                  ],
+                ),
+              ),
               Placeholder(),
               Placeholder(),
               Placeholder(),
