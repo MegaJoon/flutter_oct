@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oct/paint_test.dart';
 import 'package:flutter_oct/receipt3.dart';
 import 'package:flutter_oct/receiptapp.dart';
 import 'package:flutter_oct/requests.dart';
@@ -61,7 +62,8 @@ class MyApp extends StatelessWidget {
 //      home: GiftCard(),
 //      home: ServiceAppointment(),
 //      home: Mindfulness(),
-      home: SleepDashboard(),
+//      home: SleepDashboard(),
+      home: PaintTest(),
     );
   }
 }

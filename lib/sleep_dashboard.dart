@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_circular_slider/flutter_circular_slider.dart';
+import 'package:bezier_chart/bezier_chart.dart';
 
+// https://dribbble.com/shots/3146248-Sleep-dashboard
 // https://dribbble.com/shots/3146248-Sleep-dashboard
 
 class SleepDashboard extends StatefulWidget {
@@ -135,8 +138,114 @@ class _SleepDashboardState extends State<SleepDashboard> with TickerProviderStat
             Flexible(
               fit: FlexFit.tight,
               child: TabBarView(controller: _tabController, children: [
-                Placeholder(
-                  color: Colors.teal,
+                Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(top: 16.0),
+                      margin: EdgeInsets.only(bottom: 32.0),
+                      height: 40.0,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        itemExtent: 200,
+                        children: <Widget>[
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                          Text(
+                            "Tuesday 7th Nov",
+                            style: TextStyle(color: Colors.white, fontSize: 16.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 250,
+//                      color: Colors.black,
+                      child: SingleCircularSlider(
+                        100,
+                        75,
+                        height: 250.0,
+                        width: 250.0,
+                        baseColor: Colors.white.withOpacity(0.3),
+                        sliderStrokeWidth: 4.0,
+                        selectionColor: Colors.white,
+                        showHandlerOutter: false,
+                        handlerOutterRadius: 4.0,
+                        showRoundedCapInSelection: false,
+                        handlerColor: Colors.white,
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "75",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 80.0,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                "Sleep Score",
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.3),
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // graph
+                    Container(
+                      height: 149.0,
+//                      color: Colors.black,
+                    width: MediaQuery.of(context).size.width,
+                      child:
+                          BezierChart(
+                              bezierChartScale: BezierChartScale.CUSTOM,
+                              xAxisCustomValues: const[11, 12, 13, 14, 15, 16, 17, 18, 19],
+                              config: BezierChartConfig(
+//                                verticalIndicatorColor: Colors.black,
+                                showDataPoints: false,
+                                showVerticalIndicator: false
+                              ),
+                              series: const [
+                                BezierLine(
+                                  data: const[
+                                    DataPoint<double>(value: 10, xAxis: 11),
+                                    DataPoint<double>(value: 20, xAxis: 12),
+                                    DataPoint<double>(value: 30, xAxis: 13),
+                                    DataPoint<double>(value: 50, xAxis: 14),
+                                    DataPoint<double>(value: 70, xAxis: 15),
+                                    DataPoint<double>(value: 90, xAxis: 16),
+                                    DataPoint<double>(value: 80, xAxis: 17),
+                                    DataPoint<double>(value: 20, xAxis: 18),
+                                    DataPoint<double>(value: 10, xAxis: 19),
+                                  ]
+                                )
+                              ]),
+                    )
+                  ],
                 ),
                 Placeholder(),
               ]),
