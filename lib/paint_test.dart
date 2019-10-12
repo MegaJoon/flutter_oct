@@ -37,7 +37,6 @@ class Draw extends CustomPainter{
     var p1 = Offset(0, 500);
     var p2 = Offset(size.width/2, 100);
     canvas.drawLine(p1, p2, paint);
-    canvas.draw
 
     var p11 = Offset(size.width/2, 100);
     var p22 = Offset(size.width, 500);

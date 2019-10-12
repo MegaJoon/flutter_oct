@@ -17,6 +17,7 @@ import 'checkout.dart';
 import 'cookingapp.dart';
 import 'fashionapp.dart';
 import 'find_flight.dart';
+import 'fitness.dart';
 import 'fitness_app.dart';
 import 'fruitapp.dart';
 import 'giftcard.dart';
@@ -63,7 +64,8 @@ class MyApp extends StatelessWidget {
 //      home: ServiceAppointment(),
 //      home: Mindfulness(),
 //      home: SleepDashboard(),
-      home: PaintTest(),
+//      home: PaintTest(),
+      home: Fitness(),
     );
   }
 }
