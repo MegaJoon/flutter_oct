@@ -21,6 +21,7 @@ import 'giftcard.dart';
 import 'ice_cream.dart';
 import 'instagram.dart';
 import 'lightapp.dart';
+import 'mindfulness.dart';
 import 'minimal_music.dart';
 import 'music_festival.dart';
 import 'musicapp.dart';
@@ -57,7 +58,8 @@ class MyApp extends StatelessWidget {
 //      home: Requests(),
 //      home: CheckOut(),
 //      home: GiftCard(),
-      home: ServiceAppointment(),
+//      home: ServiceAppointment(),
+      home: Mindfulness(),
     );
   }
 }
