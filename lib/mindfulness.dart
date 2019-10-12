@@ -21,11 +21,11 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
 
   Color _color = Color.fromRGBO(79, 60, 117, 1);
 
-  String content = "Calm\nHighlights";
-  String content2 = "Peaceful\nThoughts";
-  String content3 = "Self\nConfidence";
-  String content4 = "Life\nGratitue";
-  String content5 = "Love\nYourself";
+  String content = "Calm Highlights";
+  String content2 = "Peaceful Thoughts";
+  String content3 = "Self Confidence";
+  String content4 = "Life Gratitue";
+  String content5 = "Love Yourself";
 
   TabController _tabController;
 
@@ -189,18 +189,21 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
     return InkWell(
       onTap: (){
         setState(() {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => PlayMusicPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => PlayMusicPage(_image, content)));
         });
       },
-      child: Container(
-        padding: EdgeInsets.all(8.0),
-        alignment: Alignment.topLeft,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
-        child: Text(
-          content,
-          style: TextStyle(color: color, fontSize: 20.0, fontWeight: FontWeight.bold),
+      child: Hero(
+        tag: _image,
+        child: Container(
+          padding: EdgeInsets.all(8.0),
+          alignment: Alignment.topLeft,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.0),
+              image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
+          child: Text(
+            content,
+            style: TextStyle(color: color, fontSize: 20.0, fontWeight: FontWeight.bold), maxLines: 2,
+          ),
         ),
       ),
     );
