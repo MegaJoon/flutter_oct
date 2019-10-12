@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_oct/play_music_page.dart';
 
 // https://dribbble.com/shots/7424303-Mobile-App-Mindfulness
 
@@ -185,15 +186,22 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
 
   // Custom_Card
   _buildCard(String _image, String content, Color color) {
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      alignment: Alignment.topLeft,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
-          image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
-      child: Text(
-        content,
-        style: TextStyle(color: color, fontSize: 20.0, fontWeight: FontWeight.bold),
+    return InkWell(
+      onTap: (){
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => PlayMusicPage()));
+        });
+      },
+      child: Container(
+        padding: EdgeInsets.all(8.0),
+        alignment: Alignment.topLeft,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.0),
+            image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
+        child: Text(
+          content,
+          style: TextStyle(color: color, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
