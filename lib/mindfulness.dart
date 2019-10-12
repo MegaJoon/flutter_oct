@@ -10,7 +10,22 @@ class Mindfulness extends StatefulWidget {
 
 class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin {
   String _profileImage = "https://cdn.pixabay.com/photo/2019/09/30/14/51/squirrel-4515962__340.jpg";
+
+  String _image = "https://cdn.pixabay.com/photo/2019/06/07/13/11/landscape-4258253__340.jpg";
+  String _image2 =
+      "https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372__340.jpg";
+  String _image3 = "https://cdn.pixabay.com/photo/2019/02/14/07/28/painting-3995999__340.jpg";
+  String _image4 = "https://cdn.pixabay.com/photo/2019/05/04/15/24/art-4178302__340.jpg";
+  String _image5 = "https://cdn.pixabay.com/photo/2019/08/03/04/43/inkscape-4381041__340.png";
+
   Color _color = Color.fromRGBO(79, 60, 117, 1);
+
+  String content = "Calm\nHighlights";
+  String content2 = "Peaceful\nThoughts";
+  String content3 = "Self\nConfidence";
+  String content4 = "Life\nGratitue";
+  String content5 = "Love\nYourself";
+
   TabController _tabController;
 
   @override
@@ -50,7 +65,7 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
                   ),
                   Text(
                     "Hi, Karen",
-                    style: TextStyle(color: _color, fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: _color, fontSize: 16.0, fontWeight: FontWeight.w600),
                   ),
                   Spacer(),
                   Icon(
@@ -62,6 +77,7 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
               ),
             ),
           ),
+          // tabbar
           Container(
             margin: EdgeInsets.only(left: 24.0, top: 16.0, bottom: 16.0),
             height: 32.0,
@@ -95,29 +111,65 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
                 height: 555.0,
                 child: Column(
                   children: <Widget>[
-                    Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
-                    SizedBox(height: 16.0,),
-                    Flexible(flex: 3, child: Row(
-                      children: <Widget>[
-                        Flexible(flex: 1, child: Column(
-                          children: <Widget>[
-                            Flexible(flex: 2, child: Placeholder(color: Colors.teal,),),
-                            SizedBox(height: 16.0,),
-                            Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
-                            SizedBox(height: 16.0,),
-                          ],
-                        ),),
-                        SizedBox(width: 16.0,),
-                        Flexible(flex: 1, child: Column(
-                          children: <Widget>[
-                            SizedBox(height: 16.0,),
-                            Flexible(flex: 1, child: Placeholder(color: Colors.teal,),),
-                            SizedBox(height: 16.0,),
-                            Flexible(flex: 2, child: Placeholder(color: Colors.teal,),),
-                          ],
-                        ),),
-                      ],
-                    ),),
+                    Flexible(
+                      flex: 1,
+                      child: _buildCard(_image, content, Colors.white),
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    ),
+                    Flexible(
+                      flex: 3,
+                      child: Row(
+                        children: <Widget>[
+                          Flexible(
+                            flex: 1,
+                            child: Column(
+                              children: <Widget>[
+                                Flexible(
+                                  flex: 2,
+                                  child: _buildCard(_image2, content2, Colors.white),
+                                ),
+                                SizedBox(
+                                  height: 16.0,
+                                ),
+                                Flexible(
+                                  flex: 1,
+                                  child: _buildCard(_image3, content3, Colors.white),
+                                ),
+                                SizedBox(
+                                  height: 16.0,
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 16.0,
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 16.0,
+                                ),
+                                Flexible(
+                                  flex: 1,
+                                  child: _buildCard(_image4, content4, Colors.black),
+                                ),
+                                SizedBox(
+                                  height: 16.0,
+                                ),
+                                Flexible(
+                                  flex: 2,
+                                  child: _buildCard(_image5, content5, Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -127,6 +179,21 @@ class _MindfulnessState extends State<Mindfulness> with TickerProviderStateMixin
             ]),
           )
         ],
+      ),
+    );
+  }
+
+  // Custom_Card
+  _buildCard(String _image, String content, Color color) {
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      alignment: Alignment.topLeft,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+          image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
+      child: Text(
+        content,
+        style: TextStyle(color: color, fontSize: 20.0, fontWeight: FontWeight.bold),
       ),
     );
   }
