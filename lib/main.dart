@@ -5,6 +5,7 @@ import 'package:flutter_oct/requests.dart';
 import 'package:flutter_oct/second_receipt.dart';
 import 'package:flutter_oct/service_appointment.dart';
 import 'package:flutter_oct/sign_up.dart';
+import 'package:flutter_oct/sleep_dashboard.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
 import 'package:flutter_oct/user_profile.dart';
@@ -59,7 +60,8 @@ class MyApp extends StatelessWidget {
 //      home: CheckOut(),
 //      home: GiftCard(),
 //      home: ServiceAppointment(),
-      home: Mindfulness(),
+//      home: Mindfulness(),
+      home: SleepDashboard(),
     );
   }
 }
