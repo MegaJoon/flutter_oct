@@ -92,16 +92,43 @@ class _SleepDashboardState extends State<SleepDashboard> with TickerProviderStat
         child: Column(
           children: <Widget>[
             // tabbar
-            Container(
-              height: 64.0,
-              child: TabBar(controller: _tabController, tabs: [
-                Tab(
-                  text: "DAILY",
-                ),
-                Tab(
-                  text: "WEEKLY",
-                ),
-              ]),
+            Padding(
+              padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 16.0),
+              child: Row(
+//              mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Spacer(),
+                  Container(
+                    height: 40.0,
+                    width: 300.0,
+                    child: TabBar(
+                        indicatorPadding: EdgeInsets.only(bottom: 6.0),
+                        controller: _tabController,
+                        unselectedLabelStyle:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                        unselectedLabelColor: Colors.white.withOpacity(0.3),
+                        isScrollable: false,
+                        labelColor: Colors.white,
+                        labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                        indicatorSize: TabBarIndicatorSize.label,
+                        indicatorWeight: 2.0,
+                        indicatorColor: Colors.white,
+                        tabs: [
+                          Tab(
+                            text: "DAILY",
+                          ),
+                          Tab(
+                            text: "WEEKLY",
+                          ),
+                        ]),
+                  ),
+                  Icon(
+                    Icons.blur_circular,
+                    size: 28.0,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             ),
 
             // tabbar view
