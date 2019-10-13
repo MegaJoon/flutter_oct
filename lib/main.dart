@@ -9,6 +9,7 @@ import 'package:flutter_oct/sign_up.dart';
 import 'package:flutter_oct/sleep_dashboard.dart';
 import 'package:flutter_oct/social_feeds.dart';
 import 'package:flutter_oct/social_share.dart';
+import 'package:flutter_oct/plant.dart';
 import 'package:flutter_oct/user_profile.dart';
 import 'boardpass.dart';
 import 'calculator.dart';
@@ -65,7 +66,8 @@ class MyApp extends StatelessWidget {
 //      home: Mindfulness(),
 //      home: SleepDashboard(),
 //      home: PaintTest(),
-      home: Fitness(),
+//      home: Fitness(),
+      home: Plant(),
     );
   }
 }
