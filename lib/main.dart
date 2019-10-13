@@ -67,8 +67,7 @@ class MyApp extends StatelessWidget {
 //      home: SleepDashboard(),
 //      home: PaintTest(),
 //      home: Fitness(),
-//      home: Plant(),
-      home: Task(),
+      home: Plant(),
     );
   }
 }
