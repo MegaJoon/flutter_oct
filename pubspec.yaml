@@ -32,6 +32,7 @@ dependencies:
   flutter_circular_slider: ^2.5.0
   bezier_chart: ^1.0.6
   charts_flutter: ^0.8.1
+  dots_indicator: ^1.0.0
 
 dev_dependencies:
   flutter_test:
