@@ -3,6 +3,7 @@ import 'package:flutter_oct/paint_test.dart';
 import 'package:flutter_oct/receipt3.dart';
 import 'package:flutter_oct/receiptapp.dart';
 import 'package:flutter_oct/requests.dart';
+import 'package:flutter_oct/reservation.dart';
 import 'package:flutter_oct/second_receipt.dart';
 import 'package:flutter_oct/service_appointment.dart';
 import 'package:flutter_oct/sign_up.dart';
@@ -67,7 +68,8 @@ class MyApp extends StatelessWidget {
 //      home: SleepDashboard(),
 //      home: PaintTest(),
 //      home: Fitness(),
-      home: Plant(),
+//      home: Plant(),
+      home: Reservation(),
     );
   }
 }
