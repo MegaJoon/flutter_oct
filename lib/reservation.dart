@@ -8,10 +8,13 @@ class Reservation extends StatefulWidget {
 }
 
 class _ReservationState extends State<Reservation> {
-  int _currentIndex = 0;
+  int _currentIndex = 1; // bottom navigator;
+  int selectedIndex = 0; // pageview;
   List<Widget> pages;
 
-  // bottombar
+  PageController _pageController;
+
+// bottombar
   Widget _buildItem(BottomItem item, bool isSelected) {
     return Container(
       height: 32.0,
@@ -38,6 +41,13 @@ class _ReservationState extends State<Reservation> {
         ],
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController =
+        PageController(viewportFraction: 0.9, initialPage: selectedIndex);
   }
 
   @override
@@ -74,6 +84,7 @@ class _ReservationState extends State<Reservation> {
       Placeholder(),
       Column(
         children: <Widget>[
+          // textfield
           SafeArea(
             top: true,
             left: true,
@@ -100,9 +111,11 @@ class _ReservationState extends State<Reservation> {
               ),
             ),
           ),
+          // spacer
           SizedBox(
             height: 24.0,
           ),
+          // text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
@@ -124,16 +137,136 @@ class _ReservationState extends State<Reservation> {
               ],
             ),
           ),
+          // pageview: scrollable image
           Container(
-            height: 420.0,
+            margin: EdgeInsets.only(top: 16.0),
+            height: 400.0,
 //            color: Colors.black,
             child: PageView.builder(
+                scrollDirection: Axis.horizontal,
+                controller: _pageController,
+                itemCount: cardList.length,
+                onPageChanged: (_selectedIndex) {
+                  setState(() {
+                    selectedIndex = _selectedIndex;
+                  });
+                },
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 24.0),
+                    margin: EdgeInsets.only(
+                        right: 24.0,
+                        top: (index - selectedIndex).abs().toDouble() * 32,
+                        bottom: (index - selectedIndex).abs().toDouble() * 32),
                     width: 200.0,
-                    color: Colors.redAccent,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16.0),
+                        image: DecorationImage(
+                            image: NetworkImage(cardList[index].image),
+                            fit: BoxFit.fill)),
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          top: -10,
+                          right: 10,
+                          child: Icon(
+                            Icons.bookmark,
+                            color: Colors.amber,
+                            size: 64.0,
+                          ),
+                        ),
+                        Positioned(
+                            top: 3,
+                            right: 33,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.black,
+                                  size: 16.0,
+                                ),
+                                SizedBox(
+                                  height: 2.0,
+                                ),
+                                Text(
+                                  cardList[index].reviewScore,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.w600),
+                                )
+                              ],
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 24.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.location_on,
+                                    size: 16.0,
+                                    color: Colors.white.withOpacity(0.8),
+                                  ),
+                                  Text(
+                                    cardList[index].location,
+                                    style: TextStyle(
+                                        color: Colors.white.withOpacity(0.8),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w300),
+                                  )
+                                ],
+                              ),
+                              Spacer(),
+                              Text(
+                                cardList[index].title,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                cardList[index].subtitle,
+                                style: TextStyle(
+                                  height: 1.5,
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                              SizedBox(
+                                height: 16.0,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  Text(
+                                    cardList[index].price,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 28.0,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  SizedBox(
+                                    width: 8.0,
+                                  ),
+                                  Text(
+                                    cardList[index].price2,
+                                    style: TextStyle(
+                                        color: Colors.white.withOpacity(0.8),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   );
                 }),
           )
@@ -184,7 +317,7 @@ List<CardList> cardList = [
   CardList(
       location: "Chengedu",
       image:
-          "https://cdn.pixabay.com/photo/2019/09/23/14/34/nyc-4498752__340.jpg",
+          "https://cdn.pixabay.com/photo/2019/09/04/02/52/road-4450611__340.jpg",
       reviewScore: "4.7",
       title: "Chengdu: Hotpot, Tea &\nMarket Experience",
       subtitle: "Dorastor 3 Hourts(approx)",
@@ -193,7 +326,7 @@ List<CardList> cardList = [
   CardList(
       location: "Chengedu",
       image:
-          "https://cdn.pixabay.com/photo/2019/09/04/02/52/road-4450611__340.jpg",
+          "https://cdn.pixabay.com/photo/2019/09/23/14/34/nyc-4498752__340.jpg",
       reviewScore: "4.7",
       title: "Chengdu: Hotpot, Tea &\nMarket Experience",
       subtitle: "Dorastor 3 Hourts(approx)",
