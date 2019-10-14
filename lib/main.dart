@@ -25,6 +25,7 @@ import 'fruitapp.dart';
 import 'giftcard.dart';
 import 'ice_cream.dart';
 import 'instagram.dart';
+import 'kids.dart';
 import 'lightapp.dart';
 import 'mindfulness.dart';
 import 'minimal_music.dart';
@@ -67,7 +68,8 @@ class MyApp extends StatelessWidget {
 //      home: SleepDashboard(),
 //      home: PaintTest(),
 //      home: Fitness(),
-      home: Plant(),
+//      home: Plant(),
+        home: Kids(),
     );
   }
 }
