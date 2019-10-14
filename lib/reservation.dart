@@ -59,8 +59,9 @@ class _ReservationState extends State<Reservation> {
       body: pages[_currentIndex],
       // bottombar
       bottomNavigationBar: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 24.0),
         height: 52.0,
+        color: Colors.white,
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: bottomItem.map((item) {
@@ -232,7 +233,7 @@ class _ReservationState extends State<Reservation> {
                               Text(
                                 cardList[index].subtitle,
                                 style: TextStyle(
-                                  height: 1.5,
+                                    height: 1.5,
                                     color: Colors.white.withOpacity(0.8),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w300),
@@ -269,6 +270,25 @@ class _ReservationState extends State<Reservation> {
                     ),
                   );
                 }),
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  text: "0${selectedIndex + 1}",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600)),
+              TextSpan(
+                  text: "/ 0${cardList.length}",
+                  style: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600)),
+            ]),
           )
         ],
       ),
