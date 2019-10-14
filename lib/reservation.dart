@@ -9,6 +9,7 @@ class Reservation extends StatefulWidget {
 
 class _ReservationState extends State<Reservation> {
   int _currentIndex = 0;
+  List<Widget> pages;
 
   // bottombar
   Widget _buildItem(BottomItem item, bool isSelected) {
@@ -41,9 +42,39 @@ class _ReservationState extends State<Reservation> {
 
   @override
   Widget build(BuildContext context) {
+    _definePages();
+
     return Scaffold(
-      body: Container(
-        child: Placeholder(),
+      backgroundColor: Colors.grey[300],
+      body: Column(
+        children: <Widget>[
+          SafeArea(
+            top: true,
+            left: true,
+            right: true,
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 24.0),
+              height: 40.0,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0)),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(
+                      Icons.search,
+                      size: 20.0,
+                      color: Colors.grey[300],
+                    ),
+                    hintText: "Search the tour you like",
+                    hintStyle: TextStyle(
+                        color: Colors.grey[300],
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600)),
+              ),
+            ),
+          )
+        ],
       ),
       // bottombar
       bottomNavigationBar: Container(
@@ -65,6 +96,19 @@ class _ReservationState extends State<Reservation> {
             }).toList()),
       ),
     );
+  }
+
+  _definePages() {
+    pages = [
+      Placeholder(
+        color: Colors.redAccent,
+      ),
+      Placeholder(),
+      Placeholder(
+        color: Colors.redAccent,
+      ),
+      Placeholder(),
+    ];
   }
 }
 
