@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oct/secondpage().dart';
 
 // https://dribbble.com/shots/7476286-Mobile-online-reservation
 
@@ -154,119 +155,126 @@ class _ReservationState extends State<Reservation> {
                 },
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.only(
-                        right: 24.0,
-                        top: (index - selectedIndex).abs().toDouble() * 32,
-                        bottom: (index - selectedIndex).abs().toDouble() * 32),
-                    width: 200.0,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.0),
-                        image: DecorationImage(
-                            image: NetworkImage(cardList[index].image),
-                            fit: BoxFit.fill)),
-                    child: Stack(
-                      children: <Widget>[
-                        Positioned(
-                          top: -10,
-                          right: 10,
-                          child: Icon(
-                            Icons.bookmark,
-                            color: Colors.amber,
-                            size: 64.0,
+                  return InkWell(
+                    onTap: (){
+                      setState(() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> SecondPage()));
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          right: 24.0,
+                          top: (index - selectedIndex).abs().toDouble() * 32,
+                          bottom: (index - selectedIndex).abs().toDouble() * 32),
+                      width: 200.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.0),
+                          image: DecorationImage(
+                              image: NetworkImage(cardList[index].image),
+                              fit: BoxFit.fill)),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: -10,
+                            right: 10,
+                            child: Icon(
+                              Icons.bookmark,
+                              color: Colors.amber,
+                              size: 64.0,
+                            ),
                           ),
-                        ),
-                        Positioned(
-                            top: 3,
-                            right: 33,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.black,
-                                  size: 16.0,
-                                ),
-                                SizedBox(
-                                  height: 2.0,
-                                ),
-                                Text(
-                                  cardList[index].reviewScore,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.w600),
-                                )
-                              ],
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 24.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
+                          Positioned(
+                              top: 3,
+                              right: 33,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Icon(
-                                    Icons.location_on,
+                                    Icons.star,
+                                    color: Colors.black,
                                     size: 16.0,
-                                    color: Colors.white.withOpacity(0.8),
-                                  ),
-                                  Text(
-                                    cardList[index].location,
-                                    style: TextStyle(
-                                        color: Colors.white.withOpacity(0.8),
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w300),
-                                  )
-                                ],
-                              ),
-                              Spacer(),
-                              Text(
-                                cardList[index].title,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              Text(
-                                cardList[index].subtitle,
-                                style: TextStyle(
-                                    height: 1.5,
-                                    color: Colors.white.withOpacity(0.8),
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                              SizedBox(
-                                height: 16.0,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(
-                                    cardList[index].price,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 28.0,
-                                        fontWeight: FontWeight.w600),
                                   ),
                                   SizedBox(
-                                    width: 8.0,
+                                    height: 2.0,
                                   ),
                                   Text(
-                                    cardList[index].price2,
+                                    cardList[index].reviewScore,
                                     style: TextStyle(
-                                        color: Colors.white.withOpacity(0.8),
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w300),
-                                  ),
+                                        color: Colors.black,
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.w600),
+                                  )
                                 ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                              )),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 24.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.location_on,
+                                      size: 16.0,
+                                      color: Colors.white.withOpacity(0.8),
+                                    ),
+                                    Text(
+                                      cardList[index].location,
+                                      style: TextStyle(
+                                          color: Colors.white.withOpacity(0.8),
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.w300),
+                                    )
+                                  ],
+                                ),
+                                Spacer(),
+                                Text(
+                                  cardList[index].title,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                Text(
+                                  cardList[index].subtitle,
+                                  style: TextStyle(
+                                      height: 1.5,
+                                      color: Colors.white.withOpacity(0.8),
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(
+                                  height: 16.0,
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text(
+                                      cardList[index].price,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 28.0,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    Text(
+                                      cardList[index].price2,
+                                      style: TextStyle(
+                                          color: Colors.white.withOpacity(0.8),
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 }),
