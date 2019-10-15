@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'list_file.dart';
+import 'package:flutter_oct/to1015/list_file.dart';
 
 class PlayPage extends StatefulWidget {
   int id;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/social_list.dart';
-import 'package:flutter_oct/view_post.dart';
+import 'package:flutter_oct/to1015/social_list.dart';
+import 'package:flutter_oct/to1015/view_post.dart';
 
 
-import 'custom_container.dart';
+import 'package:flutter_oct/to1015/custom_container.dart';
 
 class SocialFeedsPage extends StatefulWidget {
   @override

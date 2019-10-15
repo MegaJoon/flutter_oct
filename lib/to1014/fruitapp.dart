@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'buy_now_page.dart';
+import 'package:flutter_oct/to1015/buy_now_page.dart';
 
 // https://dribbble.com/shots/7239391-fruit-app
 

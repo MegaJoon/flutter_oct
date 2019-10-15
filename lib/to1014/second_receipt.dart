@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:flutter_oct/receipt.dart';
+import 'package:flutter_oct/to1015/receipt.dart';
 
 class SecondReceipt extends StatefulWidget {
   int id;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/play_page.dart';
+import 'package:flutter_oct/to1015/play_page.dart';
 
-import 'list_file.dart';
+import 'package:flutter_oct/to1015/list_file.dart';
 
 // https://dribbble.com/shots/7295518-Minimal-Music-App/attachments/233329?mode=media
 
