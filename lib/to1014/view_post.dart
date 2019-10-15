@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/to1015/social_list.dart';
+import 'package:flutter_oct/to1014/social_list.dart';
 
 class ViewPost extends StatefulWidget {
   @override

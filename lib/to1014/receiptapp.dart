@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_oct/to1015/receipt.dart';
-import 'package:flutter_oct/to1015/second_receipt.dart';
+import 'package:flutter_oct/to1014/receipt.dart';
+import 'package:flutter_oct/to1014/second_receipt.dart';
 
-import 'package:flutter_oct/to1015/mydottedline.dart';
+import 'package:flutter_oct/to1014/mydottedline.dart';
 
 // https://dribbble.com/shots/7355190-Receipt-App/attachments/254360?mode=media
 

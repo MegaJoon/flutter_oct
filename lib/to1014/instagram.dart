@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:flutter_oct/to1015/content.dart';
-import 'package:flutter_oct/to1015/mypage.dart';
+import 'package:flutter_oct/to1014/content.dart';
+import 'package:flutter_oct/to1014/mypage.dart';
 
 // https://dribbble.com/shots/7332739-Instagram-Redesign/attachments/247998?mode=media
 
