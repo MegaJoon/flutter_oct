@@ -34,6 +34,7 @@ import 'package:flutter_oct/to1014/musicapp.dart';
 import 'package:flutter_oct/to1014/mypage.dart';
 
 import '1015/HSBC.dart';
+import '1015/lol_login.dart';
 
 
 void main() => runApp(MyApp());
@@ -73,7 +74,8 @@ class MyApp extends StatelessWidget {
 //      home: Fitness(),
 //      home: Plant(),
 //        home: Kids(),
-        home: HSBC(),
+//        home: HSBC(),
+        home: LOL(),
     );
   }
 }
