@@ -35,6 +35,7 @@ import 'package:flutter_oct/to1014/mypage.dart';
 
 import '1015/HSBC.dart';
 import '1015/lol_login.dart';
+import '1016/check_out2.dart';
 
 
 void main() => runApp(MyApp());
@@ -75,7 +76,8 @@ class MyApp extends StatelessWidget {
 //      home: Plant(),
 //        home: Kids(),
 //        home: HSBC(),
-        home: LOL(),
+//        home: LOL(),
+        home: CheckOut2(),
     );
   }
 }
