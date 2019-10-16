@@ -75,9 +75,9 @@ class MyApp extends StatelessWidget {
 //      home: PaintTest(),
 //      home: Fitness(),
 //      home: Plant(),
-//        home: Kids(),
-//        home: HSBC(),
-//        home: LOL(),
+//      home: Kids(),
+//      home: HSBC(),
+//      home: LOL(),
 //        home: CheckOut2(),
         home: CookBook(),
     );
