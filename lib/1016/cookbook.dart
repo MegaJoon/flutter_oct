@@ -14,8 +14,6 @@ class _CookBookState extends State<CookBook> {
   String _bottomImage = "https://cdn.pixabay.com/photo/2016/05/31/13/01/raspberries-1426859__340.jpg";
   String _bottomImage2 = "https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305__340.jpg";
 
-  String _image = "https://cdn.pixabay.com/photo/2019/09/29/08/12/coffee-4512564__340.jpg";
-
   int currentIndex = 0; // using tabbar
 
   PageController _pageController;
@@ -113,7 +111,7 @@ class _CookBookState extends State<CookBook> {
                     child: PageView.builder(
                         scrollDirection: Axis.horizontal,
                         controller: _pageController,
-                        itemCount: 5,
+                        itemCount: foodList.length,
                         physics: BouncingScrollPhysics(),
                         onPageChanged: (selectedIndex) {
                           setState(() {
@@ -132,7 +130,7 @@ class _CookBookState extends State<CookBook> {
                             width: 200.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16.0),
-                              image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill),
+                              image: DecorationImage(image: NetworkImage(foodList[idx].image), fit: BoxFit.fill),
                             ),
                             child: Stack(
                               children: <Widget>[
@@ -141,11 +139,11 @@ class _CookBookState extends State<CookBook> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      "With fruits",
+                                      foodList[idx].title,
                                       style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "aboris nisi laborum quis ea\naliquip quis aute\nincididunt.",
+                                      foodList[idx].subTitle,
                                       style: TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.w300),
                                     ),
                                   ],
@@ -319,3 +317,30 @@ class _CookBookState extends State<CookBook> {
     );
   }
 }
+
+class FoodList {
+  String image;
+  String title;
+  String subTitle;
+
+  FoodList({this.image, this.title, this.subTitle});
+}
+
+List<FoodList> foodList = [
+  FoodList(
+      image: "https://cdn.pixabay.com/photo/2019/09/29/08/12/coffee-4512564__340.jpg",
+      title: "With fruits",
+      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
+  FoodList(
+      image: "https://cdn.pixabay.com/photo/2019/09/14/20/11/sea-buckthorn-4476857__340.jpg",
+      title: "With fruits",
+      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
+  FoodList(
+      image: "https://cdn.pixabay.com/photo/2019/10/15/13/36/outdoors-4551688__340.jpg",
+      title: "With fruits",
+      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
+  FoodList(
+      image: "https://cdn.pixabay.com/photo/2018/01/14/00/05/glass-3081015__340.jpg",
+      title: "With fruits",
+      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
+];
