@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter_oct/1017/cook_detail.dart';
+import 'package:flutter_oct/1017/food_list.dart';
 
 import 'mytab.dart';
 
@@ -116,48 +118,59 @@ class _CookBookState extends State<CookBook> {
                         onPageChanged: (selectedIndex) {
                           setState(() {
                             _selectedIndex = selectedIndex;
-                            print("_selectedIndex = $_selectedIndex");
-                            print("selectedIndex = $selectedIndex");
+//                            print("_selectedIndex = $_selectedIndex");
+//                            print("selectedIndex = $selectedIndex");
                           });
                         },
                         itemBuilder: (BuildContext context, int idx) {
-                          print("idx = $idx");
-                          return Container(
-                            margin: EdgeInsets.only(
-                                top: 16.0, bottom: 32.0 + (_selectedIndex - idx).abs().toDouble() * 60, right: 32.0),
-                            padding: EdgeInsets.all(16.0),
-                            height: 300.0,
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              image: DecorationImage(image: NetworkImage(foodList[idx].image), fit: BoxFit.fill),
-                            ),
-                            child: Stack(
-                              children: <Widget>[
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
+//                          print("idx = $idx");
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                // push => navigator
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => CookDetail(idx)));
+                              });
+                            },
+                            child: Hero(
+                              tag: "food $idx",
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    top: 16.0, bottom: 32.0 + (_selectedIndex - idx).abs().toDouble() * 60, right: 32.0),
+                                padding: EdgeInsets.all(16.0),
+                                height: 300.0,
+                                width: 200.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  image: DecorationImage(image: NetworkImage(foodList[idx].image), fit: BoxFit.fill),
+                                ),
+                                child: Stack(
                                   children: <Widget>[
-                                    Text(
-                                      foodList[idx].title,
-                                      style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          foodList[idx].title,
+                                          style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold),
+                                        ),
+                                        Text(
+                                          foodList[idx].subTitle,
+                                          style: TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.w300),
+                                        ),
+                                      ],
                                     ),
-                                    Text(
-                                      foodList[idx].subTitle,
-                                      style: TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.w300),
-                                    ),
+                                    Positioned(
+                                      right: 0,
+                                      top: 0,
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        size: 24.0,
+                                        color: Colors.white,
+                                      ),
+                                    )
                                   ],
                                 ),
-                                Positioned(
-                                  right: 0,
-                                  top: 0,
-                                  child: Icon(
-                                    Icons.favorite_border,
-                                    size: 24.0,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
+                              ),
                             ),
                           );
                         }),
@@ -317,30 +330,3 @@ class _CookBookState extends State<CookBook> {
     );
   }
 }
-
-class FoodList {
-  String image;
-  String title;
-  String subTitle;
-
-  FoodList({this.image, this.title, this.subTitle});
-}
-
-List<FoodList> foodList = [
-  FoodList(
-      image: "https://cdn.pixabay.com/photo/2019/09/29/08/12/coffee-4512564__340.jpg",
-      title: "With fruits",
-      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
-  FoodList(
-      image: "https://cdn.pixabay.com/photo/2019/09/14/20/11/sea-buckthorn-4476857__340.jpg",
-      title: "With fruits",
-      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
-  FoodList(
-      image: "https://cdn.pixabay.com/photo/2019/10/15/13/36/outdoors-4551688__340.jpg",
-      title: "With fruits",
-      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
-  FoodList(
-      image: "https://cdn.pixabay.com/photo/2018/01/14/00/05/glass-3081015__340.jpg",
-      title: "With fruits",
-      subTitle: "aboris nisi laborum quis ea\naliquip quis aute\nincididunt."),
-];
