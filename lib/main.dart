@@ -37,6 +37,8 @@ import '1015/HSBC.dart';
 import '1015/lol_login.dart';
 import '1016/check_out2.dart';
 import '1016/cookbook.dart';
+import '1017/info_card.dart';
+import '1017/photo_editor.dart';
 
 
 void main() => runApp(MyApp());
@@ -78,8 +80,10 @@ class MyApp extends StatelessWidget {
 //      home: Kids(),
 //      home: HSBC(),
 //      home: LOL(),
-//        home: CheckOut2(),
-        home: CookBook(),
+//      home: CheckOut2(),
+//      home: CookBook(),
+//      home: InfoCard(),
+        home: PhotoEditor(),
     );
   }
 }

@@ -70,6 +70,10 @@ flutter:
       fonts:
         - asset: fonts/NothingYouCouldDo.ttf
 
+    - family: Montserrat-Black
+      fonts:
+        - asset: fonts/Montserrat-Black.otf
+
 
 
   # To add assets to your application, add an assets section, like this:
