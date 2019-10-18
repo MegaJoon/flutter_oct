@@ -39,7 +39,8 @@ import '1016/check_out2.dart';
 import '1016/cookbook.dart';
 import '1017/info_card.dart';
 import '1017/photo_editor.dart';
-
+import '1018/leader_board.dart';
+import '1018/movie_ticket.dart';
 
 void main() => runApp(MyApp());
 
@@ -83,7 +84,9 @@ class MyApp extends StatelessWidget {
 //      home: CheckOut2(),
 //      home: CookBook(),
 //      home: InfoCard(),
-        home: PhotoEditor(),
+//      home: PhotoEditor(),
+//        home: MovieTicket(),
+        home: LeaderBoard(),
     );
   }
 }
