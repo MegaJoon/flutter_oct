@@ -56,7 +56,7 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
         Flexible(
           flex: 3,
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.0),
+            margin: EdgeInsets.only(left: 16.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
@@ -98,21 +98,125 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                         ),
                       ),
                       Container(
+                          padding: EdgeInsets.symmetric(vertical: 4.0),
                           height: 48.0,
                           child: TabBarView(
                             physics: BouncingScrollPhysics(),
                             controller: _tabController,
                             children: <Widget>[
                               ListView(
+                                scrollDirection: Axis.horizontal,
                                 children: <Widget>[
                                   Container(
-                                    height: 40.0,
-                                    width: 40.0,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.grey,
-                                        image: DecorationImage(image: NetworkImage(_bus), fit: BoxFit.fill)),
-                                  )
+                                    margin: EdgeInsets.only(right: 64.0),
+                                    width: 100.0,
+                                    child: Row(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(right: 8.0),
+                                          width: 40.0,
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Colors.grey,
+                                              image: DecorationImage(image: NetworkImage(_bus), fit: BoxFit.fill)),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "\$2.15",
+                                              style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              "10MIN",
+                                              style: TextStyle(color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(right: 64.0),
+                                    width: 100.0,
+                                    child: Row(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(right: 8.0),
+                                          width: 40.0,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.grey.withOpacity(0.5),
+                                            image: DecorationImage(
+                                                image: NetworkImage(_car),
+                                                fit: BoxFit.fill,
+                                                colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.5), BlendMode.dstATop)),
+                                          ),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "\$7-8",
+                                              style: TextStyle(
+                                                  color: Colors.black.withOpacity(0.5),
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              "5MIN",
+                                              style: TextStyle(
+                                                  color: Colors.grey.withOpacity(0.5),
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(right: 64.0),
+                                    width: 100.0,
+                                    child: Row(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(right: 8.0),
+                                          width: 40.0,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.grey.withOpacity(0.5),
+                                            image: DecorationImage(
+                                                image: NetworkImage(_car),
+                                                fit: BoxFit.fill,
+                                                colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.5), BlendMode.dstATop)),
+                                          ),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "\$7-8",
+                                              style: TextStyle(
+                                                  color: Colors.black.withOpacity(0.5),
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              "5MIN",
+                                              style: TextStyle(
+                                                  color: Colors.grey.withOpacity(0.5),
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                               Placeholder(),
@@ -126,7 +230,7 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                 Flexible(
                   flex: 1,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 16.0),
+                    padding: const EdgeInsets.only(right: 16.0, bottom: 16.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -134,22 +238,22 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                           children: <Widget>[
                             Icon(
                               FontAwesomeIcons.moneyBillAlt,
-                              size: 20.0,
+                              size: 16.0,
                               color: Colors.black,
                             ),
                             SizedBox(
-                              width: 8.0,
+                              width: 12.0,
                             ),
                             Text(
                               "Cash",
-                              style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w600),
+                              style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),
                             ),
                             SizedBox(
-                              width: 8.0,
+                              width: 4.0,
                             ),
                             Icon(
                               Icons.keyboard_arrow_down,
-                              size: 20.0,
+                              size: 16.0,
                               color: Colors.black,
                             ),
                           ],
