@@ -43,6 +43,7 @@ import '1018/leader_board.dart';
 import '1018/movie_ticket.dart';
 import '1019/grocery.dart';
 import '1019/subscription.dart';
+import '1021/bolt_app.dart';
 import '1021/travel_buddi.dart';
 
 void main() => runApp(MyApp());
@@ -92,7 +93,8 @@ class MyApp extends StatelessWidget {
 //        home: LeaderBoard(),
 //        home: Grocery(),
 //        home: Subscription(),
-        home: TravelBuddi(),
+//        home: TravelBuddi(),
+        home: BoltApp(),
     );
   }
 }
