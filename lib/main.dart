@@ -45,6 +45,7 @@ import '1019/grocery.dart';
 import '1019/subscription.dart';
 import '1021/bolt_app.dart';
 import '1021/travel_buddi.dart';
+import '1022/fashion_ui.dart';
 
 void main() => runApp(MyApp());
 
@@ -89,12 +90,13 @@ class MyApp extends StatelessWidget {
 //      home: CookBook(),
 //      home: InfoCard(),
 //      home: PhotoEditor(),
-//        home: MovieTicket(),
-//        home: LeaderBoard(),
-//        home: Grocery(),
-//        home: Subscription(),
-//        home: TravelBuddi(),
-        home: BoltApp(),
+//      home: MovieTicket(),
+//      home: LeaderBoard(),
+//      home: Grocery(),
+//      home: Subscription(),
+//      home: TravelBuddi(),
+//      home: BoltApp(),
+      home: FashionUI(),
     );
   }
 }
