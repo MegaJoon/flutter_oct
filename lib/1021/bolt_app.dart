@@ -11,6 +11,9 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
   String _bus = "https://cdn.pixabay.com/photo/2014/03/25/15/18/shuttle-bus-296452__340.png";
   String _car = "https://cdn.pixabay.com/photo/2013/07/13/01/11/beetle-155267__340.png";
 
+  Color _color = Color.fromRGBO(103, 112, 255, 1);
+  Color _color2 = Color.fromRGBO(47, 183, 118, 1);
+
   TabController _tabController;
 
   @override
@@ -24,6 +27,7 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
     return Scaffold(
         body: Column(
       children: <Widget>[
+        // top container
         Flexible(
           flex: 7,
           child: Container(
@@ -48,6 +52,74 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                     )),
                   ),
                 ),
+
+                Positioned(
+                  top: 140.0,
+                  left: 24.0,
+                  child: Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)], color: Colors.white),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "Bromma Stockholm Airport",
+                          style: TextStyle(color: Colors.black, fontSize: 12.0, fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          width: 12.0,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 12.0,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                Positioned(
+                  top: 170.0,
+                  left: 100.0,
+                  child: Icon(Icons.location_on, size: 24.0, color: _color,),
+                ),
+
+                Positioned(
+                  top: 326.0,
+                  right: 80.0,
+                  child: Container(
+                    height: 20.0,
+                    width: 20.0,
+                    decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.white, width: 3.0,), color: _color2),
+                  ),
+                ),
+
+                Positioned(
+                  top: 350.0,
+                  right: 24.0,
+                  child: Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)], color: Colors.white),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "Norrbyvogen, 279",
+                          style: TextStyle(color: Colors.black, fontSize: 12.0, fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          width: 12.0,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 12.0,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
                 //
               ],
             ),
