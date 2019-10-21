@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// https://dribbble.com/shots/7700524-BOLT-App-Airport-Shuttle-Feature-Screens/attachments/428810?mode=media
+
+// https://medium.com/@meysam.mahfouzi/drawing-curved-dashed-lines-in-flutter-b5d0645b04c8
+
 class BoltApp extends StatefulWidget {
   @override
   _BoltAppState createState() => _BoltAppState();
@@ -33,7 +37,10 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
           child: Container(
             child: Stack(
               children: <Widget>[
+                // background: Google map
                 GoogleMap(initialCameraPosition: CameraPosition(target: LatLng(59.354969, 17.942227), zoom: 14.0)),
+
+                // back arrow icon
                 Positioned(
                   top: 32.0,
                   left: 16.0,
@@ -53,6 +60,17 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                   ),
                 ),
 
+                // custom paint
+                Positioned(
+                  top: 170.0,
+                  left: 100.0,
+                  child: CustomPaint(
+                    painter: MyPainter(),
+                    child: Container(),
+                  ),
+                ),
+
+                // bromma text container
                 Positioned(
                   top: 140.0,
                   left: 24.0,
@@ -79,22 +97,39 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                   ),
                 ),
 
+                // location icon
                 Positioned(
                   top: 170.0,
                   left: 100.0,
-                  child: Icon(Icons.location_on, size: 24.0, color: _color,),
+                  child: Icon(
+                    Icons.location_on,
+                    size: 24.0,
+                    color: _color,
+                  ),
                 ),
 
+                // destination icon
                 Positioned(
                   top: 326.0,
                   right: 80.0,
                   child: Container(
+                    padding: EdgeInsets.all(4.0),
                     height: 20.0,
                     width: 20.0,
-                    decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.white, width: 3.0,), color: _color2),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2.0,
+                        ),
+                        color: _color2),
+                    child: Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                    ),
                   ),
                 ),
 
+                // destination container
                 Positioned(
                   top: 350.0,
                   right: 24.0,
@@ -119,12 +154,13 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
-                )
-                //
+                ),
               ],
             ),
           ),
         ),
+
+        // bottom container
         Flexible(
           flex: 3,
           child: Container(
@@ -132,6 +168,7 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
             color: Colors.white,
             child: Column(
               children: <Widget>[
+                // top
                 Flexible(
                   flex: 1,
                   child: Column(
@@ -298,7 +335,11 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
+
+                // divider
                 Divider(),
+
+                // bottom
                 Flexible(
                   flex: 1,
                   child: Padding(
@@ -353,4 +394,31 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
       ],
     ));
   }
+}
+
+// CustomPainter
+class MyPainter extends CustomPainter {
+  Color _color = Color.fromRGBO(103, 112, 255, 1);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint();
+    paint.color = _color;
+    paint.strokeWidth = 4.0;
+    paint.style = PaintingStyle.stroke;
+
+    var startPoint = Offset(15.0, 15.0);
+    var curvePoint1 = Offset(180.0, 70.0);
+    var curvePoint2 = Offset(210.0, 120.0);
+    var endPoint = Offset(220.0, 160.0);
+
+    var path = Path();
+    path.moveTo(startPoint.dx, startPoint.dy);
+    path.cubicTo(curvePoint1.dx, curvePoint1.dy, curvePoint2.dx, curvePoint2.dy, endPoint.dx, endPoint.dy);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
