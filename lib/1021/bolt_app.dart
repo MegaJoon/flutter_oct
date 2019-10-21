@@ -7,7 +7,10 @@ class BoltApp extends StatefulWidget {
   _BoltAppState createState() => _BoltAppState();
 }
 
-class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin{
+class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin {
+  String _bus = "https://cdn.pixabay.com/photo/2014/03/25/15/18/shuttle-bus-296452__340.png";
+  String _car = "https://cdn.pixabay.com/photo/2013/07/13/01/11/beetle-155267__340.png";
+
   TabController _tabController;
 
   @override
@@ -60,34 +63,58 @@ class _BoltAppState extends State<BoltApp> with TickerProviderStateMixin{
                 Flexible(
                   flex: 1,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      SizedBox(
+                        height: 8.0,
+                      ),
                       Text(
                         "Recommended",
                         style: TextStyle(color: Colors.orange, fontSize: 12.0, fontWeight: FontWeight.bold),
                       ),
                       Container(
-                        height: 16.0,
+                        height: 24.0,
                         child: TabBar(
                           controller: _tabController,
+                          labelPadding: EdgeInsets.only(left: 0, right: 80.0),
+                          indicatorColor: Colors.white,
+                          indicatorWeight: 0.1,
                           isScrollable: true,
                           labelColor: Colors.black,
                           labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                           unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                           unselectedLabelColor: Colors.grey,
                           tabs: <Widget>[
-                            Tab(text: "Airport Shuttle",),
-                            Tab(text: "Bolt",),
-                            Tab(text: "Executive connection",),
+                            Tab(
+                              text: "Airport Shuttle",
+                            ),
+                            Tab(
+                              text: "Bolt",
+                            ),
+                            Tab(
+                              text: "Executive connection",
+                            ),
                           ],
                         ),
                       ),
                       Container(
-                          height: 32.0,
+                          height: 48.0,
                           child: TabBarView(
                             physics: BouncingScrollPhysics(),
                             controller: _tabController,
                             children: <Widget>[
-                              Placeholder(),
+                              ListView(
+                                children: <Widget>[
+                                  Container(
+                                    height: 40.0,
+                                    width: 40.0,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.grey,
+                                        image: DecorationImage(image: NetworkImage(_bus), fit: BoxFit.fill)),
+                                  )
+                                ],
+                              ),
                               Placeholder(),
                               Placeholder(),
                             ],
