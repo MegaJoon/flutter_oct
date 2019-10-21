@@ -57,6 +57,8 @@ flutter:
     - assets/icon.ico
     - assets/sim_image.png
     - assets/pomegranate.png
+    - assets/ansley_gulielmi.jpg
+    - assets/ansley_gulielmi2.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
