@@ -155,7 +155,7 @@ class _MovieAppState extends State<MovieApp> {
                             )
                           ],
                         ),
-                        // listview
+                        // pageview
                         Container(
                           margin: EdgeInsets.only(top: 8.0),
                           height: 100.0,
@@ -165,7 +165,12 @@ class _MovieAppState extends State<MovieApp> {
                               itemCount: itemlist.length,
                               controller: _pageController,
                               physics: BouncingScrollPhysics(),
-
+                              onPageChanged: (currentIndex){
+                                setState(() {
+                                  _currentIndex = currentIndex;
+                                  print("_currentIndex = $_currentIndex");
+                                });
+                              },
                               itemBuilder: (BuildContext context, int index) {
                                 return Transform.translate(
                                   offset: Offset(-96.0, 0.0),
@@ -241,7 +246,14 @@ class _MovieAppState extends State<MovieApp> {
                         Container(
                           margin: EdgeInsets.only(top: 8.0),
                           height: 16.0,
-                          child: Center(child: DotsIndicator(dotsCount: itemlist.length, position: 1,)),
+                          child: Center(child: DotsIndicator(dotsCount: itemlist.length, position: _currentIndex,
+                          decorator: DotsDecorator(
+                            color: Colors.grey,
+                            spacing: EdgeInsets.all(3.0),
+                            size: Size(6.0, 6.0),
+                            activeSize: Size(10.0, 10.0),
+                            activeColor: Colors.white,
+                          ),)),
                         ),
                       ],
                     ),
