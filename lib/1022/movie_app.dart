@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 
 // https://dribbble.com/shots/7734747-Movie-Explorer-Service-App-for-Watching-Movies-and-TV-Series/attachments/438184?mode=media
 
@@ -11,13 +12,26 @@ class _MovieAppState extends State<MovieApp> {
   // red color
   Color _color = Color.fromRGBO(215, 25, 32, 1);
 
+  int _currentIndex = 0;
+
   // asset.image
   String _jokerImage = "assets/joker.jpg";
   String _joker1Image = "assets/joker1.jpg";
 
+  PageController _pageController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _pageController = PageController(viewportFraction: 0.5, initialPage: _currentIndex,);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenHeight = MediaQuery
+        .of(context)
+        .size
+        .height;
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -88,8 +102,8 @@ class _MovieAppState extends State<MovieApp> {
                   top: 16.0,
                   left: 0,
                   right: 0,
-//                  bottom: screenHeight * 0.10,
-                  bottom: 0,
+                  bottom: screenHeight * 0.10,
+//                  bottom: 0,
                   child: Image.asset(
                     _jokerImage,
                     fit: BoxFit.fill,
@@ -134,10 +148,10 @@ class _MovieAppState extends State<MovieApp> {
                               ),
                               child: Center(
                                   child: Icon(
-                                Icons.play_arrow,
-                                size: 24.0,
-                                color: Colors.white,
-                              )),
+                                    Icons.play_arrow,
+                                    size: 24.0,
+                                    color: Colors.white,
+                                  )),
                             )
                           ],
                         ),
@@ -145,75 +159,79 @@ class _MovieAppState extends State<MovieApp> {
                         Container(
                           margin: EdgeInsets.only(top: 8.0),
                           height: 100.0,
-                          child: ListView.builder(
-                              shrinkWrap: true,
+                          alignment: Alignment.centerLeft,
+                          child: PageView.builder(
                               scrollDirection: Axis.horizontal,
-                              padding: EdgeInsets.zero,
                               itemCount: itemlist.length,
+                              controller: _pageController,
                               physics: BouncingScrollPhysics(),
+
                               itemBuilder: (BuildContext context, int index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 16.0),
-                                  height: 100.0,
-                                  width: 200.0,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      image: DecorationImage(image: AssetImage(itemlist[index].image), fit: BoxFit.fill)),
-                                  child: Stack(
-                                    children: <Widget>[
-                                      Positioned(
-                                        top: 8.0,
-                                        right: 8.0,
-                                        child: Container(
-                                          height: 12.0,
-                                          width: 40.0,
-                                          decoration: ShapeDecoration(
-                                            shape: StadiumBorder(),
-                                            color: Colors.black,
+                                return Transform.translate(
+                                  offset: Offset(-96.0, 0.0),
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 16.0),
+                                    height: 100.0,
+                                    width: 200.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                        image: DecorationImage(image: AssetImage(itemlist[index].image), fit: BoxFit.fill)),
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          top: 8.0,
+                                          right: 8.0,
+                                          child: Container(
+                                            height: 12.0,
+                                            width: 40.0,
+                                            decoration: ShapeDecoration(
+                                              shape: StadiumBorder(),
+                                              color: Colors.black,
+                                            ),
+                                            child: Center(
+                                                child: Text(
+                                                  itemlist[index].time,
+                                                  style: TextStyle(color: Colors.white, fontSize: 8.0, fontWeight: FontWeight.w600),
+                                                )),
                                           ),
-                                          child: Center(
-                                              child: Text(
-                                            itemlist[index].time,
-                                            style: TextStyle(color: Colors.white, fontSize: 8.0, fontWeight: FontWeight.w600),
-                                          )),
                                         ),
-                                      ),
-                                      Positioned(
-                                        left: 0,
-                                        bottom: 4.0,
-                                        child: Container(
-                                          height: 20.0,
-                                          width: 200.0,
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              Flexible(
-                                                flex: 8,
-                                                child: Align(
-                                                  alignment: Alignment.bottomCenter,
-                                                  child: Text(
-                                                    itemlist[index].title,
-                                                    style:
-                                                    TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.bold),
+                                        Positioned(
+                                          left: 0,
+                                          bottom: 4.0,
+                                          child: Container(
+                                            height: 20.0,
+                                            width: 200.0,
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Flexible(
+                                                  flex: 8,
+                                                  child: Align(
+                                                    alignment: Alignment.bottomCenter,
+                                                    child: Text(
+                                                      itemlist[index].title,
+                                                      style:
+                                                      TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.bold),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                              Flexible(
-                                                flex: 2,
-                                                child: Container(
-                                                  alignment: Alignment.topCenter,
-                                                    child: Icon(
-                                                  Icons.play_circle_filled,
-                                                  size: 24.0,
-                                                  color: Colors.grey,
-                                                )),
-                                              ),
-                                            ],
+                                                Flexible(
+                                                  flex: 2,
+                                                  child: Container(
+                                                      alignment: Alignment.topCenter,
+                                                      child: Icon(
+                                                        Icons.play_circle_filled,
+                                                        size: 24.0,
+                                                        color: Colors.grey,
+                                                      )),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      )
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 );
                               }),
@@ -223,7 +241,7 @@ class _MovieAppState extends State<MovieApp> {
                         Container(
                           margin: EdgeInsets.only(top: 8.0),
                           height: 16.0,
-                          child: Placeholder(),
+                          child: Center(child: DotsIndicator(dotsCount: itemlist.length, position: 1,)),
                         ),
                       ],
                     ),
