@@ -47,6 +47,7 @@ import '1021/bolt_app.dart';
 import '1021/travel_buddi.dart';
 import '1022/fashion_ui.dart';
 import '1022/movie_app.dart';
+import '1022/plantation.dart';
 
 void main() => runApp(MyApp());
 
@@ -98,7 +99,8 @@ class MyApp extends StatelessWidget {
 //      home: TravelBuddi(),
 //      home: BoltApp(),
 //      home: FashionUI(),
-      home: MovieApp(),
+//      home: MovieApp(),
+      home: PlantationApp(),
     );
   }
 }
