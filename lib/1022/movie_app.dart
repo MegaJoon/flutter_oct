@@ -14,8 +14,6 @@ class _MovieAppState extends State<MovieApp> {
   // asset.image
   String _jokerImage = "assets/joker.jpg";
   String _joker1Image = "assets/joker1.jpg";
-  String _jumanjiImage = "assets/jumanji.jpg";
-  String _terminatorImage = "assets/terminator.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +80,7 @@ class _MovieAppState extends State<MovieApp> {
 
           // main container
           Container(
-            height: screenHeight,
+            height: screenHeight - 72.0,
             child: Stack(
               children: <Widget>[
                 // background image
@@ -90,10 +88,147 @@ class _MovieAppState extends State<MovieApp> {
                   top: 16.0,
                   left: 0,
                   right: 0,
-                  bottom: screenHeight*0.20,
-                  child: Image.asset(_jokerImage, fit: BoxFit.fill,),
+//                  bottom: screenHeight * 0.10,
+                  bottom: 0,
+                  child: Image.asset(
+                    _jokerImage,
+                    fit: BoxFit.fill,
+                  ),
                 ),
 
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                    height: screenHeight * 0.30,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            // joker text
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Joker",
+                                  style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "English | Crime, Fantasy & Thriller",
+                                  style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            ),
+
+                            // play button
+                            Container(
+                              margin: EdgeInsets.only(right: 16.0),
+                              height: 48.0,
+                              width: 48.0,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: _color,
+                              ),
+                              child: Center(
+                                  child: Icon(
+                                Icons.play_arrow,
+                                size: 24.0,
+                                color: Colors.white,
+                              )),
+                            )
+                          ],
+                        ),
+                        // listview
+                        Container(
+                          margin: EdgeInsets.only(top: 8.0),
+                          height: 100.0,
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              padding: EdgeInsets.zero,
+                              itemCount: itemlist.length,
+                              physics: BouncingScrollPhysics(),
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+                                  margin: EdgeInsets.only(right: 16.0),
+                                  height: 100.0,
+                                  width: 200.0,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      image: DecorationImage(image: AssetImage(itemlist[index].image), fit: BoxFit.fill)),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Positioned(
+                                        top: 8.0,
+                                        right: 8.0,
+                                        child: Container(
+                                          height: 12.0,
+                                          width: 40.0,
+                                          decoration: ShapeDecoration(
+                                            shape: StadiumBorder(),
+                                            color: Colors.black,
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            itemlist[index].time,
+                                            style: TextStyle(color: Colors.white, fontSize: 8.0, fontWeight: FontWeight.w600),
+                                          )),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        bottom: 4.0,
+                                        child: Container(
+                                          height: 20.0,
+                                          width: 200.0,
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Flexible(
+                                                flex: 8,
+                                                child: Align(
+                                                  alignment: Alignment.bottomCenter,
+                                                  child: Text(
+                                                    itemlist[index].title,
+                                                    style:
+                                                    TextStyle(color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.bold),
+                                                  ),
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                child: Container(
+                                                  alignment: Alignment.topCenter,
+                                                    child: Icon(
+                                                  Icons.play_circle_filled,
+                                                  size: 24.0,
+                                                  color: Colors.grey,
+                                                )),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              }),
+                        ),
+
+                        // dot indicator
+                        Container(
+                          margin: EdgeInsets.only(top: 8.0),
+                          height: 16.0,
+                          child: Placeholder(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -103,6 +238,7 @@ class _MovieAppState extends State<MovieApp> {
   }
 }
 
+// class customclipper
 class myClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -125,3 +261,36 @@ class myClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
+
+// class list
+class Itemlist {
+  String image;
+  String time;
+  String title;
+
+  Itemlist({this.image, this.time, this.title});
+}
+
+List<Itemlist> itemlist = [
+  Itemlist(
+    image: "assets/jumanji.jpg",
+    title: "Jumanji: The Next Level",
+    time: "02:25",
+  ),
+  Itemlist(
+    image: "assets/terminator.jpg",
+    title: "Terminator: Dark Fate",
+    time: "03:00",
+  ),
+  //
+  Itemlist(
+    image: "assets/jumanji.jpg",
+    title: "Jumanji: The Next Level",
+    time: "02:25",
+  ),
+  Itemlist(
+    image: "assets/terminator.jpg",
+    title: "Terminator: Dark Fate",
+    time: "03:00",
+  ),
+];
