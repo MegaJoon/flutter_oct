@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
+import 'joker_page.dart';
+
 // https://dribbble.com/shots/7734747-Movie-Explorer-Service-App-for-Watching-Movies-and-TV-Series/attachments/438184?mode=media
 
 class MovieApp extends StatefulWidget {
@@ -16,7 +18,6 @@ class _MovieAppState extends State<MovieApp> {
 
   // asset.image
   String _jokerImage = "assets/joker.jpg";
-  String _joker1Image = "assets/joker1.jpg";
 
   PageController _pageController;
 
@@ -138,20 +139,27 @@ class _MovieAppState extends State<MovieApp> {
                             ),
 
                             // play button
-                            Container(
-                              margin: EdgeInsets.only(right: 16.0),
-                              height: 48.0,
-                              width: 48.0,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: _color,
+                            InkWell(
+                              onTap: (){
+                                setState(() {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => JokerPage()));
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(right: 16.0),
+                                height: 48.0,
+                                width: 48.0,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _color,
+                                ),
+                                child: Center(
+                                    child: Icon(
+                                      Icons.play_arrow,
+                                      size: 24.0,
+                                      color: Colors.white,
+                                    )),
                               ),
-                              child: Center(
-                                  child: Icon(
-                                    Icons.play_arrow,
-                                    size: 24.0,
-                                    color: Colors.white,
-                                  )),
                             )
                           ],
                         ),
