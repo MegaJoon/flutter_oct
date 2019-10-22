@@ -11,8 +11,16 @@ class _MovieAppState extends State<MovieApp> {
   // red color
   Color _color = Color.fromRGBO(215, 25, 32, 1);
 
+  // asset.image
+  String _jokerImage = "assets/joker.jpg";
+  String _joker1Image = "assets/joker1.jpg";
+  String _jumanjiImage = "assets/jumanji.jpg";
+  String _terminatorImage = "assets/terminator.jpg";
+
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
@@ -73,7 +81,22 @@ class _MovieAppState extends State<MovieApp> {
           ),
 
           // main container
-          Container(),
+          Container(
+            height: screenHeight,
+            child: Stack(
+              children: <Widget>[
+                // background image
+                Positioned(
+                  top: 16.0,
+                  left: 0,
+                  right: 0,
+                  bottom: screenHeight*0.20,
+                  child: Image.asset(_jokerImage, fit: BoxFit.fill,),
+                ),
+
+              ],
+            ),
+          ),
         ],
       ),
     );
