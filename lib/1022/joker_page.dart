@@ -28,31 +28,48 @@ class _JokerPageState extends State<JokerPage> {
                 height: 40.0,
                 child: Row(
                   children: <Widget>[
-                    IconButton(icon: Icon(Icons.arrow_back, size: 28.0, color: Colors.white,), onPressed: (){
-                      setState(() {
-                        Navigator.pop(context);
-                      });
-                    },),
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 28.0,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          Navigator.pop(context);
+                        });
+                      },
+                    ),
                     Spacer(),
-                    Icon(Icons.search, size: 28.0, color: Colors.white,),
+                    Icon(
+                      Icons.search,
+                      size: 28.0,
+                      color: Colors.white,
+                    ),
                   ],
                 ),
               ),
             ),
-            Divider(color: Colors.grey,),
-            Container(
-              height: 24.0,
-              child: ListView(
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Text("Synopsis".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),),
-                  Text("Synopsis".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),),
-                ],
-              ),
+            Divider(
+              color: Colors.grey,
             ),
-            Divider(),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
+              height: 24.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text("Synopsis".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.bold),),
+                  Text("cast".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.bold),),
+                  Text("crew".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.bold),),
+                  Text("user reviews".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.bold),),
+                  Text("critic".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.bold),),
+                ],
+              )
+            ),
+            Divider(
+              color: Colors.grey,
+            ),
           ],
         ),
       ),
