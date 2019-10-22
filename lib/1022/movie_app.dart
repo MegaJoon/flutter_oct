@@ -24,36 +24,49 @@ class _MovieAppState extends State<MovieApp> {
             right: true,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 24.0),
-              height: 32.0,
+              height: 48.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Icon(Icons.menu, size: 28.0, color: Colors.white,),
+                  Icon(
+                    Icons.menu,
+                    size: 28.0,
+                    color: Colors.white,
+                  ),
                   Container(
                     alignment: Alignment.center,
-                    height: 32.0,
+                    height: 48.0,
                     width: 160.0,
                     child: Stack(
                       children: <Widget>[
-                        Text("book my show", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.w600),),
-                        // container
-
                         Positioned(
-                          top: 0,
+                          top: 2.0,
                           left: 60.0,
-                          child: ClipPath(
-                            clipper: myClipper(),
-                            child: Container(
-                              height: 32.0,
-                              width: 32.0,
-                              color: _color,
+                          bottom: 0,
+                          child: Transform.rotate(
+                            angle: 0.20,
+                            child: ClipPath(
+                              clipper: myClipper(),
+                              child: Container(
+                                height: 32.0,
+                                width: 32.0,
+                                color: _color,
+                              ),
                             ),
                           ),
-                        )
+                        ),
+                        Text(
+                          "book my show",
+                          style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.w600),
+                        ),
                       ],
                     ),
                   ),
-                  Icon(Icons.search, size: 28.0, color: Colors.white,),
+                  Icon(
+                    Icons.search,
+                    size: 28.0,
+                    color: Colors.white,
+                  ),
                 ],
               ),
             ),
@@ -67,23 +80,25 @@ class _MovieAppState extends State<MovieApp> {
   }
 }
 
+class myClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, 4.0);
+    path.lineTo(size.width * 0.125, 0.0);
+    path.lineTo(size.width * 0.250, 4.0);
+    path.lineTo(size.width * 0.375, 0.0);
+    path.lineTo(size.width * 0.500, 4.0);
+    path.lineTo(size.width * 0.625, 0.0);
+    path.lineTo(size.width * 0.750, 4.0);
+    path.lineTo(size.width * 0.875, 0.0);
+    path.lineTo(size.width, 4.0);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0.0, size.height);
+    path.close();
+    return path;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
