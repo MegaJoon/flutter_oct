@@ -7,8 +7,8 @@ class Dottedline extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints) {
         final boxWeight = constraints.constrainWidth();
         final lineHeight = 2.0;
-        final lineWidth = 2.0;
-        final lineCount = (boxWeight / (lineHeight *2)).floor();
+        final lineWidth = 8.0;
+        final lineCount = (boxWeight / (lineHeight *8)).floor();
 
         return Flex(
           direction: Axis.horizontal,
@@ -18,7 +18,7 @@ class Dottedline extends StatelessWidget {
                 SizedBox(
                   height: lineHeight,
                   width: lineWidth,
-                  child: DecoratedBox(decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white)),
+                  child: DecoratedBox(decoration: ShapeDecoration(shape: StadiumBorder(), color: Colors.grey[300])),
                 ),
                 SizedBox(
                   height: lineHeight,

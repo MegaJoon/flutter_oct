@@ -16,7 +16,7 @@ class MyTab extends StatelessWidget {
         margin: isSelected ? EdgeInsets.all(0.0) : EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
         width: isSelected ? 64.0 : 48.0,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(8.0),
             border: Border.all(color: Colors.black, width: 1.0),
             color: isSelected ? Colors.black : null),
         child: Center(
