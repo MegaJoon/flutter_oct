@@ -51,7 +51,7 @@ import '1022/plantation.dart';
 import '1023/le_trip.dart';
 import '1023/sign.dart';
 import '1023/test.dart';
-import '1023/tourists.dart';
+import '1023/tourist.dart';
 
 void main() => runApp(MyApp());
 
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
 //      home: LeTripApp(),
 //      home: Sign(),
 //      home: Test001(),
-    home: Tourists(),
+      home: Tourist(),
     );
   }
 }
