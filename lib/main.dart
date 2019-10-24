@@ -52,6 +52,7 @@ import '1023/le_trip.dart';
 import '1023/sign.dart';
 import '1023/test.dart';
 import '1023/tourist.dart';
+import '1024/hotel_booking.dart';
 
 void main() => runApp(MyApp());
 
@@ -108,7 +109,8 @@ class MyApp extends StatelessWidget {
 //      home: LeTripApp(),
 //      home: Sign(),
 //      home: Test001(),
-      home: Tourist(),
+//      home: Tourist(),
+      home: HotelBooking(),
     );
   }
 }
