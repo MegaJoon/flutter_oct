@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart';
 
 import 'bottom_tab.dart';
 
@@ -29,7 +30,7 @@ class _KnightsAppState extends State<KnightsApp> {
           // main
           Positioned(
             top: 0,
-            left: 0,
+            left: 24.0,
             right: 0,
             bottom: 64.0,
             child: pages[currentIndex],
@@ -88,12 +89,47 @@ class _KnightsAppState extends State<KnightsApp> {
     );
   }
 
-  _definePages(){
+  _definePages() {
     pages = [
-      Placeholder(color: Colors.red,),
-      Placeholder(color: Colors.amber,),
-      Placeholder(color: Colors.black,),
-      Placeholder(color: Colors.indigo,),
+      Placeholder(
+        color: Colors.red,
+      ),
+      
+      // main pages
+      Column(
+        children: <Widget>[
+          // appbar
+          SafeArea(
+            top: true,
+            left: true,
+            right: true,
+            child: Container(
+              margin: EdgeInsets.only(right: 24.0),
+              height: 32.0,
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.menu, size: 28.0, color: _color,),
+                    Spacer(),
+                    Badge(
+                      child: Icon(Icons.shopping_basket, size: 28.0, color: _color,),
+                    padding: EdgeInsets.all(4.0),
+                    showBadge: true,
+                    position: BadgePosition.topRight(top: 5.0, right: 0.0),
+                    ),
+                  ],
+                ),
+            ),
+          ),
+
+          
+        ],
+      ),
+      Placeholder(
+        color: Colors.black,
+      ),
+      Placeholder(
+        color: Colors.indigo,
+      ),
     ];
   }
 }
