@@ -11,9 +11,12 @@ class KnightsApp extends StatefulWidget {
 }
 
 class _KnightsAppState extends State<KnightsApp> {
-  Color _color = Color.fromRGBO(136, 123, 121, 1);
-  int currentIndex = 1;
   List<Widget> pages;
+
+  Color _color = Color.fromRGBO(136, 123, 121, 1);
+
+  int currentIndex = 1;
+
 
   void _onTab(int index) {
     setState(() {
@@ -94,9 +97,10 @@ class _KnightsAppState extends State<KnightsApp> {
       Placeholder(
         color: Colors.red,
       ),
-      
+
       // main pages
       Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           // appbar
           SafeArea(
@@ -104,20 +108,84 @@ class _KnightsAppState extends State<KnightsApp> {
             left: true,
             right: true,
             child: Container(
-              margin: EdgeInsets.only(right: 24.0),
+              margin: EdgeInsets.only(right: 24.0, bottom: 16.0),
               height: 32.0,
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.menu, size: 28.0, color: _color,),
-                    Spacer(),
-                    Badge(
-                      child: Icon(Icons.shopping_basket, size: 28.0, color: _color,),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.menu,
+                    size: 28.0,
+                    color: _color,
+                  ),
+                  Spacer(),
+                  Badge(
+                    child: Icon(
+                      Icons.shopping_basket,
+                      size: 28.0,
+                      color: _color,
+                    ),
                     padding: EdgeInsets.all(4.0),
                     showBadge: true,
                     position: BadgePosition.topRight(top: 5.0, right: 0.0),
-                    ),
-                  ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // title
+          Text(
+            "Knights shop",
+            style: TextStyle(
+                color: _color, fontSize: 40.0, fontWeight: FontWeight.bold),
+          ),
+
+          // listview
+          Container(
+            margin: EdgeInsets.only(top: 16.0),
+            height: 60.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              physics: BouncingScrollPhysics(),
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(right: 36.0),
+                  width: 60.0,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.0),
+                    color: _color,
+                  boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)]),
+                  child: Center(child: Icon(Icons.favorite_border, size: 32.0, color: Colors.white,)),
                 ),
+                Container(
+                  margin: EdgeInsets.only(right: 36.0),
+                  width: 60.0,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.grey[200],
+//                      boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)]
+                  ),
+                  child: Center(child: Icon(Icons.favorite_border, size: 32.0, color: _color,)),
+                ),
+                Container(
+                  margin: EdgeInsets.only(right: 36.0),
+                  width: 60.0,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.grey[200],
+//                      boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)]
+                  ),
+                  child: Center(child: Icon(Icons.favorite_border, size: 32.0, color: _color,)),
+                ),
+                Container(
+                  margin: EdgeInsets.only(right: 36.0),
+                  width: 60.0,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.grey[200],
+//                      boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)]
+                  ),
+                  child: Center(child: Icon(Icons.favorite_border, size: 32.0, color: _color,)),
+                ),
+              ],
             ),
           ),
 
@@ -133,3 +201,5 @@ class _KnightsAppState extends State<KnightsApp> {
     ];
   }
 }
+
+
