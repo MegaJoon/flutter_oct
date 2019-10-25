@@ -9,8 +9,10 @@ class TravelBuddi extends StatefulWidget {
 }
 
 class _TravelBuddiState extends State<TravelBuddi> {
-  String _image = "https://cdn.pixabay.com/photo/2016/11/08/05/26/woman-1807533__340.jpg";
-  String _image2 = "https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130__340.jpg";
+  String _image =
+      "https://cdn.pixabay.com/photo/2016/11/08/05/26/woman-1807533__340.jpg";
+  String _image2 =
+      "https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130__340.jpg";
 
   // tag signal
   int _tag = 1;
@@ -50,11 +52,17 @@ class _TravelBuddiState extends State<TravelBuddi> {
                             children: <Widget>[
                               Text(
                                 "TravelBuddi",
-                                style: TextStyle(color: Colors.black, fontSize: 24.0, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 "Your Guide & Knowledge",
-                                style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ],
                           ),
@@ -63,7 +71,8 @@ class _TravelBuddiState extends State<TravelBuddi> {
                           flex: 1,
                           child: Text(
                             "😁",
-                            style: TextStyle(color: Colors.black, fontSize: 28.0),
+                            style:
+                                TextStyle(color: Colors.black, fontSize: 28.0),
                           ),
                         ),
                       ],
@@ -78,33 +87,50 @@ class _TravelBuddiState extends State<TravelBuddi> {
                     padding: EdgeInsets.only(top: 32.0),
                     children: <Widget>[
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             _tag = 1;
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => TravelSecond(_tag)));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TravelSecond(_tag)));
                           });
                         },
                         child: Hero(
                           tag: 1,
                           child: Container(
                             margin: EdgeInsets.only(bottom: 24.0),
-                            padding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 32.0),
+                            padding: EdgeInsets.only(
+                                left: 24.0, right: 24.0, bottom: 32.0),
                             height: 350.0,
                             decoration: BoxDecoration(
-                                boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)],
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black12,
+                                      spreadRadius: 2,
+                                      blurRadius: 4)
+                                ],
                                 borderRadius: BorderRadius.circular(16.0),
-                                image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
+                                image: DecorationImage(
+                                    image: NetworkImage(_image),
+                                    fit: BoxFit.fill)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
                                 Text(
                                   "1802 price for",
-                                  style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w300),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w300),
                                 ),
                                 Text(
                                   "Thailand",
-                                  style: TextStyle(color: Colors.white, fontSize: 42.0, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 42.0,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -112,33 +138,50 @@ class _TravelBuddiState extends State<TravelBuddi> {
                         ),
                       ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             _tag = 2;
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => TravelSecond(_tag)));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TravelSecond(_tag)));
                           });
                         },
                         child: Hero(
                           tag: 2,
                           child: Container(
                             margin: EdgeInsets.only(bottom: 24.0),
-                            padding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 32.0),
+                            padding: EdgeInsets.only(
+                                left: 24.0, right: 24.0, bottom: 32.0),
                             height: 350.0,
                             decoration: BoxDecoration(
-                                boxShadow: [BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 4)],
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black12,
+                                      spreadRadius: 2,
+                                      blurRadius: 4)
+                                ],
                                 borderRadius: BorderRadius.circular(16.0),
-                                image: DecorationImage(image: NetworkImage(_image2), fit: BoxFit.fill)),
+                                image: DecorationImage(
+                                    image: NetworkImage(_image2),
+                                    fit: BoxFit.fill)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
                                 Text(
                                   "1802 price for",
-                                  style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w300),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w300),
                                 ),
                                 Text(
                                   "Korea",
-                                  style: TextStyle(color: Colors.white, fontSize: 42.0, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 42.0,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -158,7 +201,9 @@ class _TravelBuddiState extends State<TravelBuddi> {
             child: Container(
               height: 48.0,
               decoration: ShapeDecoration(
-                  color: Colors.white, shape: StadiumBorder(), shadows: [BoxShadow(color: Colors.black12, blurRadius: 4)]),
+                  color: Colors.white,
+                  shape: StadiumBorder(),
+                  shadows: [BoxShadow(color: Colors.black12, blurRadius: 4)]),
               child: TextField(
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(12.0),
@@ -169,7 +214,10 @@ class _TravelBuddiState extends State<TravelBuddi> {
                       color: Colors.black,
                     ),
                     hintText: "Search places, things, etc...",
-                    hintStyle: TextStyle(color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.w600)),
+                    hintStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600)),
               ),
             ),
           )
