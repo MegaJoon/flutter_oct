@@ -56,6 +56,7 @@ import '1024/hotel_booking.dart';
 import '1025/knights.dart';
 import '1025/product_design.dart';
 import '1025/travel_buddi2.dart';
+import '1026/dating_app.dart';
 
 void main() => runApp(MyApp());
 
@@ -116,7 +117,8 @@ class MyApp extends StatelessWidget {
 //      home: HotelBooking(),
 //      home: KnightsApp(),
 //      home: ProductDesign(),
-    home: TravelBuddi2(),
+//    home: TravelBuddi2(),
+    home: DatingApp(),
     );
   }
 }
