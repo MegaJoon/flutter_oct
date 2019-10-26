@@ -84,6 +84,10 @@ flutter:
       fonts:
         - asset: fonts/Montserrat-Black.otf
 
+    - family: Bannie
+      fonts:
+        - asset: fonts/Bannie.ttf
+
 
 
   # To add assets to your application, add an assets section, like this:
