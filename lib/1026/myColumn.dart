@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'dating_app.dart';
+import 'itemlist.dart';
 
 class MyColumn extends StatelessWidget {
   final int index;
+  // for using hero;
   final Function onTab;
 
-  MyColumn(this.index, this.onTab);
+  // Icon on click event : change color
+  final Function onClickIcon;
+
+  MyColumn(this.index, this.onTab, this.onClickIcon);
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +20,22 @@ class MyColumn extends StatelessWidget {
           flex: 8,
           child: InkWell(
             onTap: onTab,
+            // when using Navigator: using hero
             child: Hero(
-              tag: "matches $index",
+              tag: "$index",
               child: Container(
-                padding: EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(2.0),
                 alignment: Alignment.topLeft,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16.0),
                     image: DecorationImage(
                         image: NetworkImage(itemList[index].image),
                         fit: BoxFit.cover)),
-                child:
-                    Icon(Icons.favorite, size: 20.0, color: Colors.redAccent),
+                child: IconButton(
+                  icon: Icon(Icons.favorite, size: 20.0, color: itemList[index].isSelected? Colors.redAccent: Colors.black),
+                  // icon clicked event
+                  onPressed: onClickIcon,
+                ),
               ),
             ),
           ),
