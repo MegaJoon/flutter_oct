@@ -261,11 +261,15 @@ class myClipper extends CustomClipper<Path>{
   @override
   Path getClip(Size size) {
     var path = new Path();
-    path.lineTo(0.0, size.height * 0.20);
+    path.lineTo(size.width, 0.0);
+    path.lineTo(6.0, size.height * 0.20 - 6.0);
+    // border
+    path.quadraticBezierTo(2.0, size.height * 0.20 - 4.0, 0.0, size.height * 0.20);
     path.lineTo(0.0, size.height * 0.80);
+    //
+    path.quadraticBezierTo(2.0, size.height * 0.80 + 4.0, 6.0, size.height * 0.80 + 8.0);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0.0);
-    path.lineTo(0.0, size.height * 0.20);
     path.close();
     return path;
   }
