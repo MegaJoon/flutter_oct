@@ -8,8 +8,33 @@ class FoodieApp extends StatefulWidget {
 }
 
 class _FoodieAppState extends State<FoodieApp> {
+  String title = "Foodie";
+  Color _color = Color.fromRGBO(31, 48, 99, 1);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          // appbar
+          SliverAppBar(
+            backgroundColor: Colors.white,
+            leading: IconButton(
+              icon: Icon(Icons.menu, size: 28.0, color: _color,),
+              onPressed: (){},),
+            centerTitle: true,
+            title: Text(title,
+              style: TextStyle(color: _color, fontSize: 28.0, fontWeight: FontWeight.bold,),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.filter_list, size: 28.0, color: _color,),
+                onPressed: (){},
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
