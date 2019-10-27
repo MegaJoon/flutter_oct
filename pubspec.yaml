@@ -66,6 +66,9 @@ flutter:
     - assets/hongdduk.jpg
     - assets/weapon1.png
     - assets/weapon2.png
+    - assets/avengers.jpg
+    - assets/johnwick.jpg
+    - assets/spiderman.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
