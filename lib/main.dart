@@ -59,6 +59,7 @@ import '1025/travel_buddi2.dart';
 import '1026/dating_app.dart';
 import '1027/foodie.dart';
 import '1027/movie.dart';
+import '1028/bookstoreapp.dart';
 
 void main() => runApp(MyApp());
 
@@ -122,7 +123,8 @@ class MyApp extends StatelessWidget {
 //    home: TravelBuddi2(),
 //    home: DatingApp(),
 //    home: FoodieApp(),
-    home: MovieApp2(),
+//    home: MovieApp2(),
+    home: BookStoreApp(),
     );
   }
 }
