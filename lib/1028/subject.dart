@@ -18,6 +18,8 @@ class _SubjectAppState extends State<SubjectApp> with TickerProviderStateMixin {
   String _image = "https://cdn.pixabay.com/photo/2015/06/02/12/59/narrative-794978__340.jpg";
   String _image2 = "https://cdn.pixabay.com/photo/2018/03/19/18/20/tea-time-3240766__340.jpg";
 
+  String _profileImage = "https://cdn.pixabay.com/photo/2019/09/21/09/07/flamingo-4493419__340.jpg";
+
   Color _reviewColor = Color.fromRGBO(232, 195, 142, 1);
 
   @override
@@ -410,8 +412,317 @@ class _SubjectAppState extends State<SubjectApp> with TickerProviderStateMixin {
       ),
 
       // part2
-      Placeholder(
-        color: Colors.black,
+      SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            // appbar
+            SafeArea(
+              top: true,
+              left: true,
+              right: true,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 16.0),
+                height: 80.0,
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "Profile",
+                      style: TextStyle(color: Colors.black, fontSize: 32.0, fontWeight: FontWeight.bold),
+                    ),
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.only(right: 8.0),
+                      height: 24.0,
+                      width: 24.0,
+                      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.redAccent),
+                      child: Center(child: Text("2", style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w600),)),
+                    ),
+
+                    Icon(Icons.more_horiz, size: 28.0, color: Colors.black,),
+                  ],
+                ),
+              ),
+            ),
+
+            //
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
+              height: 48.0,
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(right: 16.0),
+                    height: 48.0,
+                    width: 48.0,
+                    decoration: BoxDecoration(shape: BoxShape.circle, image: DecorationImage(image: NetworkImage(_profileImage), fit: BoxFit.fill)),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text("Eyal ZuriMy", style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                          SizedBox(width: 8.0,),
+                          Container(
+                            height: 24.0,
+                            width: 80.0,
+                            decoration: ShapeDecoration(shape: StadiumBorder(), color: Colors.blue,),
+                            child: Center(child: Text("level 3", style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w400),)),
+                          ),
+                        ],
+                      ),
+                      Text("Great progress this semester", style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                    ],
+                  ),
+                  Spacer(),
+                  Icon(Icons.border_color, size: 24.0, color: Colors.grey,),
+                ],
+              ),
+            ),
+            //
+            Container(
+              margin: EdgeInsets.only(left: 24.0, right: 24.0, top: 16.0),
+              height: 48.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text("3", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+                      Text("Honor", style: TextStyle(color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),),
+                    ],
+                  ),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text("A+", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+Icon(Icons.arrow_drop_up, size: 20.0, color: Colors.green,),                        ],
+                      ),
+                      Text("Fraction", style: TextStyle(color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),),
+                    ],
+                  ),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text("7", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+                      Text("Ranking", style: TextStyle(color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),),
+                    ],
+                  ),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text("12", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+                      Text("Dynamic", style: TextStyle(color: Colors.grey, fontSize: 14.0, fontWeight: FontWeight.w600),),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            // divider;
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              height: 8.0,
+              color: Colors.grey[300],
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
+              height: 200.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    height: 56.0,
+                    child: Row(
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text("Learning Courses", style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w600),),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(text: "There are ", style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                                  TextSpan(text: "2 ", style: TextStyle(color: Colors.teal, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                                  TextSpan(text: "courses that have already joined.", style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                                ]
+                              ),
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 36.0,
+                          width: 36.0,
+                          decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.teal),
+                          child: Center(child: Icon(Icons.add, size: 24.0, color: Colors.white,)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 56.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 48.0,
+                          width: 48.0,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0),
+                              image: DecorationImage(image: NetworkImage(_image), fit: BoxFit.fill)),
+                        ),
+
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text("Morning textbook", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+                            Row(
+                              children: <Widget>[
+                                Text("Last read page 27", style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                                SizedBox(width: 8.0,),
+                                Icon(Icons.bookmark, size: 12.0, color: Colors.amber,),
+                              ],
+                            ),
+                          ],
+                        ),
+
+                        Spacer(),
+
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    height: 56.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 48.0,
+                          width: 48.0,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0),
+                              image: DecorationImage(image: NetworkImage(_image2), fit: BoxFit.fill)),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text("English reading", style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600),),
+                            Text("Has not started", style: TextStyle(color: Colors.grey, fontSize: 12.0, fontWeight: FontWeight.w600),),
+                          ],
+                        ),
+
+                        Spacer(),
+
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // divider;
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              height: 8.0,
+              color: Colors.grey[300],
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0),
+              height: 200.0,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 60.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 24.0,
+                          width: 32.0,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color: Colors.indigo),
+                          child: Center(child: Icon(Icons.arrow_right, size: 20.0, color: Colors.white,)),
+                        ),
+                        
+                        Text("Video", style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                        Spacer(),
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 60.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 28.0,
+                          width: 32.0,
+                          decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.green),
+                          child: Center(child: Icon(Icons.whatshot, size: 20.0, color: Colors.white,)),
+                        ),
+
+                        Text("Wrong question", style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                        Spacer(),
+                        Text("3", style: TextStyle(color: Colors.grey, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 60.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 24.0,
+                          width: 32.0,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color: Colors.indigo),
+                          child: Center(child: Icon(Icons.arrow_right, size: 20.0, color: Colors.white,)),
+                        ),
+
+                        Text("Video", style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                        Spacer(),
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 60.0,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(right: 16.0),
+                          height: 24.0,
+                          width: 32.0,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color: Colors.indigo),
+                          child: Center(child: Icon(Icons.arrow_right, size: 20.0, color: Colors.white,)),
+                        ),
+
+                        Text("Video", style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.w600),),
+                        Spacer(),
+                        Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey,),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     ];
   }
