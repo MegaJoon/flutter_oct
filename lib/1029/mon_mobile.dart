@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'mon_mobile2.dart';
+
 // https://dribbble.com/shots/7859385-MON-mobile-version/attachments/481970?mode=media
 
 class MONMobile extends StatefulWidget {
@@ -73,7 +75,7 @@ class _MONMobileState extends State<MONMobile> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text("MoN", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold, fontFamily: "ITCAvantGardeStd",),),
-                            Text("makeup", style: TextStyle(color: Colors.white12, fontSize: 12.0, fontWeight: FontWeight.w400),)
+                            Text("makeup", style: TextStyle(color: Colors.white70, fontSize: 14.0, fontWeight: FontWeight.w400),)
                           ],
                         ),
                       ),
@@ -89,7 +91,7 @@ class _MONMobileState extends State<MONMobile> {
                             Container(
                               height: 56.0,
                               width: 56.0,
-                              color: Colors.yellowAccent,
+                              color: Colors.yellow,
                               child: Icon(Icons.shopping_cart, size: 32.0, color: Colors.black,),
                             ),
                           ],
@@ -223,8 +225,45 @@ class _MONMobileState extends State<MONMobile> {
                       color: Colors.black,
                     ),
                   ),
+
+
                 ],
               ),
+            ),
+          ),
+
+          // text column
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.65,
+            left: 16.0,
+            right: 16.0,
+            bottom: 16.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("Make moves:".toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 32.0, fontWeight: FontWeight.bold),),
+                Spacer(),
+                Text("Meet Sasha, Nic,\n& Livia", style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),),
+                Text("Make The Rules. Make The Fun. Live Your Look", style: TextStyle(color: Colors.white70, fontSize: 16.0, fontWeight: FontWeight.w400),),
+                Spacer(),
+
+                // navigator
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MonMobile2()));
+                    });
+                  },
+                  child: Container(
+                    height: 56.0,
+                    width: 56.0,
+                    color: Colors.yellow,
+                    child: Center(
+                        child: Icon(
+                          Icons.arrow_forward, size: 28.0, color: Colors.black,)),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
