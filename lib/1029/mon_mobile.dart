@@ -170,7 +170,63 @@ class _MONMobileState extends State<MONMobile> {
             ),
           ),
 
-          
+          // center icon
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.50 - 60.0,
+            left: MediaQuery.of(context).size.width * 0.50 - 60.0,
+            child: Container(
+              height: 120.0,
+              width: 120.0,
+              child: Stack(
+                children: <Widget>[
+                  // left
+                  Positioned(
+                    top: 30.0,
+                    left: 0,
+                    child: Container(
+                      height: 60.0,
+                      width: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.0)),
+                        child: Center(
+                            child: Icon(
+                              Icons.arrow_back, size: 28.0, color: Colors.black,)),
+                      ),
+                    ),
+                  ),
+
+                  // right
+                  Positioned(
+                    top: 30.0,
+                    right: 0,
+                    child: Container(
+                      height: 60.0,
+                      width: 60.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.0)),
+                        child: Center(
+                            child: Icon(
+                              Icons.arrow_forward, size: 28.0, color: Colors.black,)),
+                      ),
+                    ),
+                  ),
+
+                  // center icon
+                  Positioned(
+                    top: 0,
+                    right: 60.0 - 1.0,
+                    child: Container(
+                      height: 120.0,
+                      width: 2.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       )
     );
