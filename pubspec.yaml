@@ -96,6 +96,10 @@ flutter:
       fonts:
         - asset: fonts/Bannie.ttf
 
+    - family: ITCAvantGardeStd
+      fonts:
+        - asset: fonts/ITCAvantGardeStd-Md.ttf
+
 
 
   # To add assets to your application, add an assets section, like this:

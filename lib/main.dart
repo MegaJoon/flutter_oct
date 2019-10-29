@@ -128,7 +128,7 @@ class MyApp extends StatelessWidget {
 //    home: MovieApp2(),
 //    home: BookStoreApp(),
 //    home: SubjectApp(),
-    home: MONmobile(),
+    home: MONMobile(),
     );
   }
 }
