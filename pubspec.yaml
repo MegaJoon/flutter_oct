@@ -74,6 +74,7 @@ flutter:
     - assets/koala.jpg
     - assets/scare.jpg
     - assets/superbuns.jpg
+    - assets/serum.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
