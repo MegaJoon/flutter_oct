@@ -23,7 +23,8 @@ class MyTab extends StatelessWidget {
               style: TextStyle(
                   color: isSelected? _color: _color.withOpacity(0.2),
                   fontSize: 16.0,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+              ),
             ),
             Container(
               margin: EdgeInsets.only(left: 6.0, ),

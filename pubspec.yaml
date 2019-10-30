@@ -97,7 +97,7 @@ flutter:
       fonts:
         - asset: fonts/Bannie.ttf
 
-    - family: ITCAvantGardeStd
+    - family: ITCAvantGardeStd-Md
       fonts:
         - asset: fonts/ITCAvantGardeStd-Md.ttf
 

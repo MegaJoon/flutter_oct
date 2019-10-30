@@ -63,6 +63,7 @@ import '1028/bookstoreapp.dart';
 import '1028/subject.dart';
 import '1029/mon_mobile.dart';
 import '1029/mon_mobile2.dart';
+import '1030/dailyapp.dart';
 
 void main() => runApp(MyApp());
 
@@ -130,7 +131,8 @@ class MyApp extends StatelessWidget {
 //    home: BookStoreApp(),
 //    home: SubjectApp(),
 //    home: MONMobile(),
-    home: MonMobile2(),
+//    home: MonMobile2(),
+    home: DailyApp(),
     );
   }
 }
